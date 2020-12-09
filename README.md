@@ -12,9 +12,9 @@
 
 ## Requirements:
   - C++ compiler
-  - Doxygen [https://www.doxygen.nl/index.html]
-  - git [https://github.com/]
-  - ROOT [https://root.cern.ch/]
+  - [Doxygen](https://www.doxygen.nl/index.html)
+  - [git](https://github.com/)
+  - [ROOT](https://root.cern.ch/)
 
 
 ## Installation:
@@ -27,9 +27,9 @@ Select the appropriate one among the list below:
 
 
 ## List of computing sessions:
-  - [Session 1: Introduction to development tools][sessions/Session1.md]
-  - Session 2: Class development
-  - Session 3: Project on environmental conditions
-  - Session 4: ROOT
+  - [Session 1: Introduction to development tools](sessions/Session1.md)
+  - [Session 2: Class development](sessions/Session2.md)
+  - [Session 3: Project on environmental conditions](Session3.md)
+  - [Session 4: ROOT](sessions/Session4.md)
 
 
