@@ -1,5 +1,3 @@
-# ESIPAPCpp
-
 # ESIPAP: Edition 2021 - Module 1
 #   Computing Session
 
@@ -7,7 +5,6 @@
 ## Lecturers:
   - Eric Chabert
   - Eric Conte
-
 
 
 ## Requirements:
@@ -21,9 +18,9 @@
  
 The instructions depends on the OS you are working on.
 Select the appropriate one among the list below:
-  - Windows
-  - Linux
-  - macOS
+  - [Windows](install/Windows.md)
+  - [Linux](install/Linux.md)
+  - [macOS](install/macOS.md)
 
 
 ## List of computing sessions:
