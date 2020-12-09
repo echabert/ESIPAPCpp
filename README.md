@@ -27,7 +27,7 @@ Select the appropriate one among the list below:
 
 
 ## List of computing sessions:
-  - Session 1: Introduction to development tools
+  - [Session 1: Introduction to development tools][sessions/Session1.md]
   - Session 2: Class development
   - Session 3: Project on environmental conditions
   - Session 4: ROOT
