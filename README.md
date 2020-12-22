@@ -18,9 +18,9 @@
  
 The instructions depends on the OS you are working on.
 Select the appropriate one among the list below:
-  - [Windows](install/Windows.md)
-  - [Linux](install/Linux.md)
-  - [macOS](install/macOS.md)
+  - [Windows](doc/install/Windows.md)
+  - [Linux](doc/install/Linux.md)
+  - [macOS](doc/install/macOS.md)
 
 
 ## List of computing sessions:
