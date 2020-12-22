@@ -13,8 +13,14 @@
  
  ### 1.3. Installing Git
  
+    - Downloading and installing the package from the website (https://github.com/)
+	- Keeping all the default settings.
+	
  ### 1.4. Installing CMake
  
+    - Downloading the package (format .msi) from the website (https://cmake.org/download/)
+	- Executing the .msi file in order to install it.
+	- Specifiying that CMake must be set in the PATH environment variable for all users.  
  
 ## Step 2: Building ROOT
  
