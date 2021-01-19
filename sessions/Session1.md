@@ -31,10 +31,10 @@ At the end of each of them, you can compile and test our program becore going fu
 
 The goal of this section is to be able to utilize classes available in the Standard Template Library (stl).
 For our application, several classes will be useful:
-   - [http://www.cplusplus.com/reference/fstream/ifstream/][ifstream] : a class which allow to open file
-   - [http://www.cplusplus.com/reference/fstream/ofstream/][ofstream] : a class which allow to write file
-   - [http://www.cplusplus.com/reference/iostream/cout/?kw=cout][cout]: an object of the class ostream that represents the standard output stream 
-   - [http://www.cplusplus.com/reference/vector/vector/?kw=vector][vector]: a template class that is a container representing an arrays that can change in size
+   - [ifstream](http://www.cplusplus.com/reference/fstream/ifstream/) : a class which allow to open file
+   - [ofstream](http://www.cplusplus.com/reference/fstream/ofstream/) : a class which allow to write file
+   - [cout](http://www.cplusplus.com/reference/iostream/cout/?kw=cout): an object of the class ostream that represents the standard output stream 
+   - [vector](http://www.cplusplus.com/reference/vector/vector/?kw=vector): a template class that is a container representing an arrays that can change in size
 
 Write a program which:
    - Write a message to inform users that the program has started 
@@ -110,7 +110,7 @@ Excute the program to check that the compilation chain and the link edition work
 The goal of this section is to produce a csv file (comma separated value) with numerical values corresponding the data: *output.csv*.
 The produced output file could later be tested by other program/applications such as OpenOffice/Excell.
 Instructions:
-   - Open a new file in writing mode: an instance of [http://www.cplusplus.com/reference/fstream/ofstream/][ofstream]
+   - Open a new file in writing mode: an instance of [ofstream](http://www.cplusplus.com/reference/fstream/ofstream/)
    - Write the data in a structured way: values separated by a comma, one line per entry into the csv file
    - Write a short report into the terminal (cout command) at the end of the reading to report the number of entries.
 
