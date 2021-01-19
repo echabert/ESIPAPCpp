@@ -4,7 +4,7 @@
 
  ### 1.1. Installing Visual Studio 2019
  
-  - Downloading the free version of Microsoft Visual Studio 2019 (release 16.X) from the official website: (https://visualstudio.microsoft.com/fr/downloads/)
+  - Downloading the free version (community version) of Microsoft Visual Studio 2019 (release 16.X) from the official website: (https://visualstudio.microsoft.com/fr/downloads/)
   - Selecting the development for "C++ desktop applications", for "C++ linux applications", for "scientific package for python and F#".
  
  ### 1.2. Installing Doxygen
