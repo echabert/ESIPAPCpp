@@ -19,7 +19,7 @@ The aim of the program is to read a binary file saved by a certain device, decod
 ## The tools:
    - **editor**: feel free to use the editor of our choice. Several are available on virtual machine (including emacs, gedit, nedit, vi/vim)
    - **compiler**: by default you can use **g++** (clang can also be used) 
-   - **git**: requires to have an accound on [https://github.com/][github]
+   - **git**: requires to have an accound on [github](https://github.com/)
 
 
 ## Steps
