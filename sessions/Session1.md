@@ -1,6 +1,11 @@
 # Computing session 1: 
 #   Introduction to development tools
 
+This session should be done in 3 hours.
+You are advised to refer the the C++ lectures and the links given below in order to
+achieve the goals mentioned below.
+The subject (described in *Context*) as been given choosen to be simple in order to allow students to be focussed on getting familiar with the environment and good practices of C++ development.
+
 ## Goals:
   - Becoming familiar with C++ development environment
   - Practicing basic C++ development with well structured files
@@ -14,7 +19,7 @@ The aim of the program is to read a binary file saved by a certain device, decod
 ## The tools:
    - **editor**: feel free to use the editor of our choice. Several are available on virtual machine (including emacs, gedit, nedit, vi/vim)
    - **compiler**: by default you can use **g++** (clang can also be used) 
-   - **git**: requires to have an accound on [https://github.com/](github)
+   - **git**: requires to have an accound on [https://github.com/][github]
 
 
 ## Steps
@@ -26,10 +31,10 @@ At the end of each of them, you can compile and test our program becore going fu
 
 The goal of this section is to be able to utilize classes available in the Standard Template Library (stl).
 For our application, several classes will be useful:
-   - [http://www.cplusplus.com/reference/fstream/ifstream/](ifstream) : a class which allow to open file
-   - [http://www.cplusplus.com/reference/fstream/ofstream/](ofstream) : a class which allow to write file
-   - [http://www.cplusplus.com/reference/iostream/cout/?kw=cout](cout): an object of the class ostream that represents the standard output stream 
-   - [http://www.cplusplus.com/reference/vector/vector/?kw=vector](vector): a template class that is a container representing an arrays that can change in size
+   - [http://www.cplusplus.com/reference/fstream/ifstream/][ifstream] : a class which allow to open file
+   - [http://www.cplusplus.com/reference/fstream/ofstream/][ofstream] : a class which allow to write file
+   - [http://www.cplusplus.com/reference/iostream/cout/?kw=cout][cout]: an object of the class ostream that represents the standard output stream 
+   - [http://www.cplusplus.com/reference/vector/vector/?kw=vector][vector]: a template class that is a container representing an arrays that can change in size
 
 Write a program which:
    - Write a message to inform users that the program has started 
@@ -105,7 +110,7 @@ Excute the program to check that the compilation chain and the link edition work
 The goal of this section is to produce a csv file (comma separated value) with numerical values corresponding the data: *output.csv*.
 The produced output file could later be tested by other program/applications such as OpenOffice/Excell.
 Instructions:
-   - Open a new file in writing mode: an instance of [http://www.cplusplus.com/reference/fstream/ofstream/](ofstream)
+   - Open a new file in writing mode: an instance of [http://www.cplusplus.com/reference/fstream/ofstream/][ofstream]
    - Write the data in a structured way: values separated by a comma, one line per entry into the csv file
    - Write a short report into the terminal (cout command) at the end of the reading to report the number of entries.
 
