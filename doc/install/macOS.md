@@ -12,8 +12,8 @@ There are several ways to perform software installation on macOS:
    two main ways to perform installation which depends on the linux package manager.
 
 We propose here an example of installation procedure.
-If you are used to different method, feel free to change the procedure.
-In anyway, make sure that your environment is ready to work by launching the tests
+If you are used to different methods, feel free to change the procedure.
+But anyway, make sure that your environment is ready to work by launching the tests
 at the end of the installation.
 
 
@@ -26,23 +26,23 @@ Whithin a terminal, launch the command: <br/>
 Note that it may take some time. Be patient.
 In order to check that brew is installed and obtained the version (2.7.5), type:
 ```
-bew --version
+brew --version
 ```
 
 ## Step 1: Installing the classical packages related to software development
 
  ### 1.1. Xcode 
 
-In principe, to develop in C++ you need at least a text editor and a C++ compiler, **g++**.
+In principe, to develop in C++ you need at least a text editor and a C++ compiler such as **g++**.
 In principle, **g++** is already available on macOS.<br/>
 You can test can this is the case by typing into a terminal <br/>
 ```g++ --version```
 
 **Xcode** is a developper environment under macOS that can be used.
-If it is not yet installed (check on *Applications*), you can download and install it using the link https://developer.apple.com/download/
+If it is not yet installed (check on *Applications*), you can download and install it using the link https://developer.apple.com/download/ <br/>
 Once **Xcode** is installed, you should normally access to:
-   - Compiler: **g++** (already installed by default) and **clang**
-   - **Xcode** includes a text editor
+   - C++ compiler: **g++** (already installed by default) and **clang**
+   - A program editor 
 
 Other options to install **Xcode**:
    - Using Apple Store
@@ -58,11 +58,13 @@ Other options to install **Xcode**:
  
  ### 1.3. Installing Git
 
+   - Check if **git** is already installed <br/>
 In principle, git should be available once **Xcode** has been installed.
 You can test by launching the following command in a terminal<br/>
-```git --version```
+```git --version``` <br/>
 If it fails, you need to install git.
-Instructions can be found here: https://git-scm.com/download/mac.
+   - **git** installation:
+Instructions can be found here: https://git-scm.com/download/mac.<br/>
 If *brew* has been installed (cf section XX), you can type in a terminal:<br/>
 ```brew install git```
 
@@ -79,15 +81,16 @@ This is the simplest way to proceed.
 
 Note that if ROOT is already installed on our machine and even if it is an old version, you don't need to update it to the latest one as we will only uses the basics of ROOT functionnalities.
 
-Instructions on the website can found using this link [https://root.cern/install/](https://root.cern/install/). We have extracted the most relevant one for linux distribution but you can refer to the website if necessary.
+Instructions on the website can found using this link [https://root.cern/install/](https://root.cern/install/). 
 
-List of possibilities to install ROOT:
-   - If **brew has been installed [adviced], type into our terminal:<br/>
+**Ordered list of possibilities to install ROOT:**
+   - If **brew** has been installed [adviced], type into our terminal:<br/>
    ``` brew install root```
-   - If instead you have macports installed, type:<br/>
+   - If instead you have **macports** installed, type:<br/>
    ```sudo port install root6```
-   - If none of this option is possible, download and install the binaries which correspond to you macOS version and our XCode version from the link: https://root.cern/releases/release-62206/. You should firstly make sure that XCode was installed.
-   - Last solution: buidling from source (which require that Cmake has been installed). Instructions can be found here: https://root.cern/install/#build-from-source
+   - If none of this option is possible, **download and install the binaries** which correspond to you macOS version and our XCode version from the link: https://root.cern/releases/release-62206/. You should firstly make sure that XCode was installed.
+   - Last solution is to ** buid from source**. This requires to that **Cmake** has been installed). <br/>
+   Instructions can be found here: https://root.cern/install/#build-from-source
 
 
 
