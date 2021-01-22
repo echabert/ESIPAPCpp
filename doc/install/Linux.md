@@ -3,15 +3,15 @@
 
 The procedure depends on the linux distribution you are using.
 
-There are two main ways to install which depends on the linux package manager.
+There are two main ways to perform installation which depends on the linux package manager.
 
-   - Fedora, CentOS, etc:    command **yum**
-   - Ubuntu, etc: 	     command **apt-get**
+   - Fedora, CentOS, etc:    the command **yum**
+   - Ubuntu, etc: 	     the command **apt-get**
 
 Those commands will be launched in our **terminal**.
 
 
-On Ubuntu-like distribution, we advice to refresh the list of package by typing:
+On Ubuntu-like distribution, we advice to refresh the list of packages by typing:
 ```
 apt-get update 
 ```
@@ -20,13 +20,13 @@ apt-get update
 
  ### 1.1. C++ compiler and text editor 
 
-To code in C++, we need at least a text editor (name it **EDITOR**) and a C++ compilor, **g++**.
+To code in C++, we need at least a text editor (name it **EDITOR**) and a C++ compiler, **g++**.
 
 **EDITOR** could be *emacs*, *gedit*, *nedit*, *vim*, etc
 
 In almost all distributions, there are available by default.
 
-To test if it is the case, you can simple type the commands in the terminal
+To test if it is the case, you can simple type the commands in a terminal
    - ```EDITOR```
    - ```g++ --version```
  
@@ -58,31 +58,22 @@ On Fedora:
 On Ubuntu:
    - ```apt-get install git```
 	
- ### 1.4. Installing CMake
-
-On Fedora: 
-   - ```yum install cmake```
-
-On Ubuntu:
-   - ```apt-get install cmake```
  
  
 ## Step 2: Installing the ROOT package
 
 There are several ways to install ROOT including:
-   - downloading the sources and compiling
-
+   - downloading and compiling the sources <br/>
 The pros are to choose the list of libraries compiled and to make sure that you are compliant with our environment. The cons are that it may appear as more complex and anyway time consumming.
-   - using a pre-compiled version
+   - using a pre-compiled version <br/>
+   We suggest this solution for Ubuntu distributions.
    - using a package manager<br/>
-Several ones can be used on the same OS. By example on Fedora, you could either use yum, conda (if installed) or snap (if installed). 
-   This is the simplest way to proceed.
+This is the simplest way to proceed.
+Several package managers can be available on our OS depending on our installation. By example on Fedora, you could either use yum (the default linux package manager), conda (if installed) or snap (if installed). 
 
-Instructions on the website can found using this link [https://root.cern/install/](https://root.cern/install/).
+Instructions on the website can found using this link [https://root.cern/install/](https://root.cern/install/). We have extracted the most relevant one for linux distribution but you can refer to the website if necessary.
 
-
-For the sake of simplicity, we will propose to use the package manager when possible.
-If ROOT is already installed on our machine, you don't need to update our version to the latest one as we will only uses the basics of ROOT functionnalities.
+Note that if ROOT is already installed on our machine and even if it is an old version, you don't need to update it to the latest one as we will only uses the basics of ROOT functionnalities.
 
 On CentOS:
    - ```yum install epel-release```
@@ -92,14 +83,16 @@ On Fedora:
    - ```yum install root```
 
 On Ubuntu:
-   - Download the latest pre-compiled version corresponding to our OS: 6.22.06 in this link: [https://root.cern/releases/release-62206/](https://root.cern/releases/release-62206/). You could also use the wget command as following (for ubuntu 19)
+   - **Download the latest pre-compiled version** corresponding to our OS: 6.22.06 in this link: [https://root.cern/releases/release-62206/](https://root.cern/releases/release-62206/). <br/>
+   You could also use the wget command as following (for Ubuntu 19)<br/>
    ```wget https://root.cern/download/root_v6.22.00.Linux-ubuntu19-x86_64-gcc9.2.tar.gz```
-  - Move the archive in a location when you want to install ROOT (could be our home directory)
-  - untar the file downloaded:
+  - **Move the archive** in a location when you want to install ROOT (could be our home directory)
+  - **untar** the file downloaded:<br/>
    ```tar -xzvf root_v6.22.00.Linux-ubuntu19-x86_64-gcc9.2.tar.gz```
-  - Each time you want to be able to access ROOT, you need to launch the command
+  - **Setup** <br/>
+  Each time you want to be able to access ROOT, you need to launch the command (assuming that the directory root is located in our current directory) <br/>
   ```source root/bin/thisroot.sh ```
-  - We suggest to add this insctruction into our ~/.bashrc file to make sure that it is always accessible (once you open a terminal). Make sure that you use the correct path 
+  - We suggest to add this instruction into our **~/.bashrc** file to make sure that it is always accessible (once you open a terminal). Make sure that you use the correct path. If you don't do that, you will need to launch the former command each time you open a terminal.
 
 
 
