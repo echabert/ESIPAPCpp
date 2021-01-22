@@ -7,20 +7,23 @@
   - Eric Conte
 
 
-## Requirements:
+## Required packages:
   - C++ compiler
   - [Doxygen](https://www.doxygen.nl/index.html)
   - [git](https://github.com/)
   - [ROOT](https://root.cern.ch/)
 
 
-## Installation:
+## Installation of the packages:
  
-The instructions depends on the OS you are working on.
-Select the appropriate one among the list below:
-  - [Windows](doc/install/Windows.md)
-  - [Linux](doc/install/Linux.md)
-  - [macOS](doc/install/macOS.md)
+The computing sessions requires to a fully-operational system with all the packages installed and configured. The preparation of your system must be done before the computing sessions: there will be no time during these sessions for installing the missing packages.
+Two solutions are proposed for having your system ready:
+
+  - Downloading and using an image of a pre-configured Linux distribution with the help of the program VirtualBox. [Please follow this instructions](doc/install/VirtualBox.md)
+  - Installing step-by-step the required packages on your own system. The instructions will depend on the OS (Operator System): 
+    - [Windows](doc/install/Windows.md)
+    - [Linux](doc/install/Linux.md)
+    - [macOS](doc/install/macOS.md)
 
 
 ## List of computing sessions:
