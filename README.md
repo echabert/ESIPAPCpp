@@ -25,6 +25,11 @@ Two solutions are proposed for having your system ready:
     - [Linux](doc/install/Linux.md)
     - [macOS](doc/install/macOS.md)
 
+## Creation of github account
+
+It will be required to create github repositories during the computing sessions.
+We ask you to to it before the beginning of the sessions.
+  - [Instruction to create a github account](doc/git/GitAccount.md)
 
 ## List of computing sessions:
   - [Session 1: Introduction to development tools](sessions/Session1.md)
