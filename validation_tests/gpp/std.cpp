@@ -9,7 +9,7 @@ int main()
 	std::cout << "BEGIN Test" << std::endl;
 	std::vector<double> eric;
 	std::map<int,int> eric2;
-	std::ifstream input("file.txt","r");
+	std::ifstream input("file.txt");
 	std::stringstream str;
 	str << "1 2";
 	int a=0;
