@@ -27,6 +27,50 @@ The aim of the program is to read a binary file saved by a certain device, decod
 In order to ease the realization of this computing session, it has been decomposed into short steps.
 At the end of each of them, you can compile and test our program becore going further.
 
+
+### Prerequisites
+
+#### Downloading our main github repository
+
+   - On Linux/macOS, you can launch in a terminal the command
+   ```
+      git clone https://github.com/echabert/ESIPAPCpp.git
+   ```
+   - On Windows but also other system, you can simply download an zip of the code (needed to be unzip)
+   https://github.com/echabert/ESIPAPCpp/archive/main.zip
+
+You will then be able to access to all files
+
+#### Creating your private github repository for these sessions
+
+The goal of this section is to save your results into the revisionning software **git**.
+You need to follow the instructions described in [../../doc/git/GitRepository.md](the section GitRepository).
+Once the repository is created, you can *download it* (*clone* it) by using the command:
+```
+git clone https://github.com/your_username/ESICppCS.git
+```
+where your\_username as to be replace by your username.
+A password will be asked.
+Then follow the instructions:
+   - Go to the directory<br/>
+   On Linux/Windows you can use the command ```cd ESICppCS```
+   - Create a directory "Session1" <br/>
+   On Linux/Windows you can use the command ```mkdir Session1```
+   - Create an helloworld.cpp file <br/>
+   ```#include <
+   - Add our file
+   ```
+   git add MYFILE
+   ```
+   - Commit our file
+   ```
+   git commit -m 'first commit for test' MYFILE
+   ```
+   - Push our file into our directory
+   ```
+   git push
+   ```
+
 ### Step 1: using stl classes
 
 The goal of this section is to be able to utilize classes available in the Standard Template Library (stl).
@@ -63,49 +107,7 @@ Save, compile and test our program before going to the next step.
 In order to check that you program is working properly, the values value you should read are:
 XXX
 
-
-### Step 3: use of a function
-
-The goal of this section is to move the block of instructions that deal with the binary decoding into a well-defined function in order to be reused in other applications if needed.
-In order to do this, you need to:
-   - Define properly the prototype of the function (return type and ordered list of arguments with there type)
-   - Implement the function *Decoding*
-   - Call the function in the *main*
-
-You have the freedom to design the prototype as you which.
-
-Save, compile and test our program before going to the next step.
-
-
-### Step 4: file splitting
-
-The goal of this section is to split the program into 3 files:
-   - An header file containing the prototype of the function: *Decode.h*
-   - A source file containing the definition of the function: *Decode.cpp*
-   - A main file containing the function main: *main.cpp*
-
-Few advices:
-   - The header file need to be protected against multiple inclusion
-   - The compilation can be done in several step as there is 2 cpp files
-
-Save, compile and test our program before going to the next step.
-
-
-### Step 5: creating a library
-
-The goal of this section is to create a shared library.
-In our application, this library will only contain the decoding function.
-Relevant instructions have been given during the lecture.
-You can refer to them.
-Actions to be done:
-   - Create a shared library decode.so (.dylib or .dll)
-   - Link the library to the executable  (*main*)
-
-Excute the program to check that the compilation chain and the link edition worked well.
-
-
-
-### Step 6: analyzing the data content
+### Step 3: exporting the data in a human readable format: csv file
 
 The goal of this section is to produce a csv file (comma separated value) with numerical values corresponding the data: *output.csv*.
 The produced output file could later be tested by other program/applications such as OpenOffice/Excell.
@@ -123,13 +125,51 @@ Tests:
    - Produce the graphics of XXXX
 
 
-### Step 7: use of git
+### Step 4: use of a function
 
-The goal of this section is save your results into the revisionning software **git**.
+The goal of this section is to move the block of instructions that deal with the binary decoding into a well-defined function in order to be reused in other applications if needed.
+In order to do this, you need to:
+   - Define properly the prototype of the function (return type and ordered list of arguments with there type)
+   - Implement the function *Decoding*
+   - Call the function in the *main*
+
+You have the freedom to design the prototype as you which.
+
+Save, compile and test our program before going to the next step.
+
+
+### Step 5: file splitting
+
+The goal of this section is to split the program into 3 files:
+   - An header file containing the prototype of the function: *Decode.h*
+   - A source file containing the definition of the function: *Decode.cpp*
+   - A main file containing the function main: *main.cpp*
+
+Few advices:
+   - The header file need to be protected against multiple inclusion
+   - The compilation can be done in several step as there is 2 cpp files
+
+Save, compile and test our program before going to the next step.
+
+
+### Step 6: creating a library
+
+The goal of this section is to create a shared library.
+In our application, this library will only contain the decoding function.
+Relevant instructions have been given during the lecture.
+You can refer to them.
+Actions to be done:
+   - Create a shared library decode.so (.dylib or .dll)
+   - Link the library to the executable  (*main*)
+
+Excute the program to check that the compilation chain and the link edition worked well.
 
 
 
-### Step 8: going further
+
+
+
+### Step 7: going further
 
 This last step is **not mandatory**. 
 If you have already finished the previous steps and want to go further, we provide you several options:
