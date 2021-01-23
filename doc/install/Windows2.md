@@ -1,14 +1,14 @@
 # Installation on Windows system
 
 ```diff
--These instructions do not work currently because ROOT is not compatible yet with the last release of Visual Studio.
++These instructions allow us to build and install ROOT on Windows 10. But an old version of ROOT and Visual Studio are used.
 ```
 
 ## Step 1: Installing the classical packages related to software development
 
-### 1.1. Installing Visual Studio 2019
+### 1.1. Installing Visual Studio 2017
  
-  - Downloading the free version (community version) of Microsoft Visual Studio 2019 (release 16.X) from the official website: (https://visualstudio.microsoft.com/fr/downloads/)
+  - Downloading the free version (community version) of Microsoft Visual Studio 2017 (release 15.9.31) from the official website: (https://visualstudio.microsoft.com/fr/vs/older-downloads/). It is possible that you need to create an account in order to download this old package.
   - Selecting the development for "C++ desktop applications", for "C++ linux applications", for "scientific package for python and F#".
  
 ### 1.2. Installing Doxygen
@@ -34,21 +34,21 @@
  
 ### 2.2. Downloading the source tarball
  
-  - Downloading the last release of ROOT (v6.22.06) :  https://root.cern/download/root_v6.22.06.source.tar.gz
+  - Downloading the last release of ROOT (v6.13.08) :  https://root.cern/download/root_v6.13.08.source.tar.gz
   - Unzip the tarball and put the content in a new folder C:\SourceDir. If you have no software for untarring the file, please download 7Zip. 
  
 ### 2.2. Building ROOT  
 
   - Creating two folders: `C:\ROOT` and `C:\BuildDir`
-  - In the `Start` menu of Windows, go to `Visual Studio 19` and select `x86 Native Tools Command Prompt for VS 2019` (not the 64bits one).
+  - In the `Start` menu of Windows, go to `Visual Studio 17` and select `x86 Native Tools Command Prompt for VS 2017` (not the 64bits one).
   - Type the following lines
     ```
     cd C:\BuildDir
-	cmake -G "Visual Studio 16 2019" -A Win32 -Thost=x64 -DCMAKE_VERBOSE_MAKEFILE=ON -Dpyroot=ON -DACTIVATE_MULTITHREADED_COMPILATION=OFF -DCMAKE_INSTALL_PREFIX=..\ROOT -DCMAKE_CXX_STANDARD=14 ..\SourceDir
+	cmake -G "Visual Studio 15 2017" -Thost=x64 -DCMAKE_VERBOSE_MAKEFILE=ON -Dpyroot=ON -DACTIVATE_MULTITHREADED_COMPILATION=OFF -DCMAKE_INSTALL_PREFIX=..\ROOT -DCMAKE_CXX_STANDARD=14 ..\SourceDir
 	```
   - If there is no mistake, then launch the building by the above command line. It last about 1 hour.
     ```
-    cmake --build . --config Debug
+    cmake --build . --config Debug -j1
 	```
   - If there is no mistake, then launch the installation in the binaries in the folder `C:\ROOT` by the command line:
     ```
