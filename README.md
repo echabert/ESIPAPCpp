@@ -19,10 +19,10 @@
 The computing sessions requires to a fully-operational system with all the packages installed and configured. The preparation of your system must be done before the computing sessions: there will be no time during these sessions for installing the missing packages.
 Two solutions are proposed for having your system ready:
 
-  - Downloading and using an image of a pre-configured Linux distribution with the help of the program VirtualBox. [Please follow these instructions](doc/install/VirtualBox.md).
-  - Installing step-by-step the required packages on your own system. The instructions will depend on the OS (Operator System): 
-    - [Windows](doc/install/Windows.md) NOT RECOMMENDED: DO NOT WORK YET (NEED OF A PATCH FROM ROOT AUTHORS)
-    - [Windows](doc/install/Windows2.md) RECOMMENDED: using previous releases of ROOT and Visual Studio.
+  - Solution 1: Downloading and using an image of a pre-configured Linux distribution with the help of the program VirtualBox. [Please follow these instructions](doc/install/VirtualBox.md).
+  - Solution 2: Installing step-by-step the required packages on your own system. The instructions will depend on the OS (Operator System): 
+    - [Windows](doc/install/Windows.md) NOT RECOMMENDED: do not work yet = need of a patch from the ROOT authors.
+    - [Windows](doc/install/Windows2.md) RECOMMENDED: using previous releases = ROOT 5 and Visual Studio 2013.
     - [Linux](doc/install/Linux.md)
     - [macOS](doc/install/macOS.md)
 

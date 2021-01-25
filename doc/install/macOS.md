@@ -17,11 +17,11 @@ But anyway, make sure that your environment is ready to work by launching the te
 at the end of the installation.
 
 
-## Step 0: Installing brew [optional but adviced]
+## Step 0: Installing brew [optional but advised]
  
 Whithin a terminal, launch the command: <br/>
 ```
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 Note that it may take some time. Be patient.
 In order to check that brew is installed and obtained the version (2.7.5), type:
@@ -53,7 +53,7 @@ Other options to install **Xcode**:
 
    - If **brew** has been installed, you can type the command:<br/>
    ```brew install --cask  doxygen```
-   - Otherwise , you can download and install doxygen from the link https://macdownload.informer.com/doxygen/
+   - Otherwise, you can download and install doxygen from the link https://macdownload.informer.com/doxygen/
 
  
  ### 1.3. Installing Git
