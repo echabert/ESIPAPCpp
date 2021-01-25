@@ -26,6 +26,12 @@ Two solutions are proposed for having your system ready:
     - [Linux](doc/install/Linux.md)
     - [macOS](doc/install/macOS.md)
 
+## Test of the setup:
+ 
+If you use the Solution 1 with the Linux image, you can skip this section because the setup is already well configured. If you use the Solution 2, you need to test that everything works properly and you are ready to begin the computing sessions. The instructions depend also on the OS (Operator System):
+    - [Windows](doc/validation/Windows.md) 
+    - [Linux/macOS](doc/validation/Linux-macOS.md)
+
 ## Creation of github account
 
 It will be required to create github repositories during the computing sessions.
