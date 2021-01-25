@@ -48,7 +48,7 @@
 	```
   - If there is no mistake, then launch the building by the above command line. It last about 1 hour.
     ```
-    cmake --build . --config Debug
+    cmake --build . --config Debug -j1
 	```
   - If there is no mistake, then launch the installation in the binaries in the folder `C:\ROOT` by the command line:
     ```
