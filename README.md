@@ -29,8 +29,8 @@ Two solutions are proposed for having your system ready:
 ## Check of the setup:
  
 If you use the Solution 1 with the Linux image, you can skip this section because the setup is already well configured. If you use the Solution 2, you need to check that everything works properly and that you are ready to begin the computing sessions. The instructions depend also on the OS (Operator System):
-    - [Windows](doc/validation/Windows.md)
-    - [Linux/macOS](doc/validation/Linux-macOS.md)
+  - [Windows](doc/check/Windows.md)
+  - [Linux/macOS](doc/check/Linux.md)
 	
 ## Creation of github account
 
