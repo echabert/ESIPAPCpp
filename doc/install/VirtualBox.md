@@ -11,7 +11,7 @@ Developed by Oracle Corporation, VirtualBox allows yout to emulate an Windows, L
 
 We have prepared for you a pre-configured and compact Linux image based on the [Bodhi distribution](https://www.bodhilinux.com/) v5.1.0 (built on top of Ubuntu v18.04).
 
-   - First, you need to download the image with the following [link](https://drive.google.com/file/d/1lFVl1nNlulRXMcI61fw0lp24aP-JmJr4/view?usp=sharing). The size of the OVA file is about 3.3 GB.
+   - First, you need to download the image with the following [link](https://drive.google.com/file/d/1E1WTxtac5Pi1Oy6g8gaxnUnF5bRZP5CG/view?usp=sharing). The size of the OVA file is about 3.3 GB.
    - Then, you need to connect the image to VirtualBox. To do that, you have to click on the button "Import", or alternatively using the short-cut Ctrl+I. Then select the OVA file that you have just downloaded and click to import. Once unpacked, the image will occupy about 10 GB on your hard drive.
    
 ## Step 3 : Starting with the Linux image
@@ -129,5 +129,11 @@ We have prepared for you a pre-configured and compact Linux image based on the [
 ```  
    - Finally reboot the system.
 
-### Create a share disk
+### Create a shared disk
 
+   - Start the Linux virtual machine.
+   - On the top of the screen, select `Devices` -> `Settings` -> `Shared Folders...`
+   - Choose the `Add` button and specify a folder on the host machine. Select also the `Make permanent` and `Automatical mount` options.
+   - Open the `File Manager` from the icon in the task bar. Alternative: type at the prompt of a console: `pcmanfm`.
+   - The shared folder should appear at the root of your folder tree.
+   
