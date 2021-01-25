@@ -37,7 +37,7 @@
   - Downloading the last release of ROOT (v6.22.06) :  https://root.cern/download/root_v6.22.06.source.tar.gz
   - Unzip the tarball and put the content in a new folder C:\SourceDir. If you have no software for untarring the file, please download 7Zip. 
  
-### 2.2. Building ROOT  
+### 2.3. Building ROOT  
 
   - Creating two folders: `C:\ROOT` and `C:\BuildDir`
   - In the `Start` menu of Windows, go to `Visual Studio 19` and select `x86 Native Tools Command Prompt for VS 2019` (not the 64bits one).
