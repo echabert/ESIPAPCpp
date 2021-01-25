@@ -1,9 +1,6 @@
-unsigned int Square(unsigned int x)
-{
-	return x*x;
-}
+#include "file2.h"
 
-double Square(double x)
+unsigned int Square(unsigned int x)
 {
 	return x*x;
 }

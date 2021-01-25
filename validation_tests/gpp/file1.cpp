@@ -3,6 +3,8 @@
 
 int main()
 {
-	std::cout << "2 square : " << Square(2) << std::endl;
-	return 0;
+  std::cout << "BEGIN Test" << std::endl;
+  std::cout << "2 square : " << Square(2) << std::endl;
+  std::cout << "END Test" << std::endl;
+  return 42;
 }

@@ -31,10 +31,29 @@ We have prepared for you a pre-configured and compact Linux image based on the [
 
    - Only one user: bodhi
    - Superuser account: `root` with the password: 123456
+   
+### Fix a small bug
 
+In the Linux image, there is a small bug. It is not possible to write a `L` character in upper case. Please follow these instructions in order to fix it:
+   - Click on the `start` button.
+   - Select `settings` then `settings pannel`.
+   - In the pannel which appears at the screen, click on `Input` then `Key bindings`.
+   - In the list of bindings, choose the category `Shift` and remove the binding `SHIFT + L`.
+
+
+### Turn off the bell
+
+In a terminal, the beeping bell sound can be very annoying. You can turn off it by following the instructions:
+   - You need to edit the configuration file `/etc/inputrc`:
+```sudo nedit /etc/inputrc ```
+   - Add the line `set bell-style none` in the file and save it.
+   - Open a new terminal to see the effects of the change.
+   
+For GNU Emacs, the bell can be disable if you edit (or create) the file `~/.emacs` and add the line `(setq visible-bell t)`.
+   
 ### Change the keyboard language
 
-   - You need to edit a configuration file `/etc/default/keyboard` :
+   - You need to edit hte configuration file `/etc/default/keyboard`:
    ```sudo nedit /etc/default/keyboard```
    - Change `XKBLAYOUT="us"` by `XKBLAYOUT="fr"` for the French keyboard. Other languages are also available. This is the list:
 ```

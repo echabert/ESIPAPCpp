@@ -17,5 +17,5 @@ int main()
 	str >> a;
 	str >> b;
 	std::cout << "END Test" << std::endl;
-	return 0;
+	return 42;
 }
