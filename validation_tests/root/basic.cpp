@@ -3,6 +3,8 @@
 
 int main()
 {
-	std::cout << gROOT->GetVersion() << std::endl;
-	return 0;
+  std::cout << "BEGIN Test" << std::endl;
+  std::cout << gROOT->GetVersion() << std::endl;
+  std::cout << "END Test" << std::endl;
+  return 42;
 }

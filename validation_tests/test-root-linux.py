@@ -6,31 +6,7 @@ import glob
 import shutil
 
 
-# FORMAT
-# [ Test_name  Command_line  Produced_exectutable  returned_value  pattern_to_look_for  add_folder_to_lD_lIBRARY_PATH]
-commands_gpp = [ ['the simpliest program','g++ basic.cpp -o basic','basic',42,'',False],\
-                 ['using the standard library','g++ std.cpp -o std','std',42,'END Test',False],\
-                 ['creating an object file','g++ -c -o file2.o file2.cpp','file2.o',42,'END Test',False],\
-                 ['building project with several files','g++ file1.cpp file2.o -o several1','several1',42,'END Test',False],\
-                 ['creating a static library','ar rvs file2.a file2.o','file2.a',42,'END Test',False],\
-                 ['building a project with a static library','g++ file1.cpp file2.a -o several2','several2',42,'END Test',False],\
-                 ['creating a dynamic library','g++ -shared -o libfile2.so file2.o','libfile2.so',42,'END Test',False],\
-                 ['building a project with a dynamic library','g++ file1.cpp -L./ -lfile2 -o several3','several3',42,'END Test',True] ]
-
-
-commands_clang = [ ['the simpliest program','clang basic.cpp -o basic','basic',42,'',False],\
-                 ['using the standard library','clang -lstdc++ std.cpp -o std','std',42,'END Test',False],\
-                 ['creating an object file','clang -c -o file2.o file2.cpp','file2.o',42,'END Test',False],\
-                 ['building project with several files','clang -lstdc++ file1.cpp file2.o -o several1','several1',42,'END Test',False],\
-                 ['creating a static library','ar rvs file2.a file2.o','file2.a',42,'END Test',False],\
-                 ['building a project with a static library','clang -lstdc++ file1.cpp file2.a -o several2','several2',42,'END Test',False],\
-                 ['creating a dynamic library','clang -lstdc++ -shared -o libfile2.so file2.o','libfile2.so',42,'END Test',False],\
-                 ['building a project with a dynamic library','clang file1.cpp -lstdc++ -L./ -lfile2 -o several3','several3',42,'END Test',True] ]
-
-
 location = os.path.abspath(os.path.dirname(__file__))
-
-
 
 
 #####################################################################################################
@@ -43,8 +19,8 @@ def launchtest(mycommands):
     print "Working in the folder: "+folder
     
     # Copy the source files in a tmp folder
-    files = glob.glob(location+"/gpp/*.cpp")
-    files.extend(glob.glob(location+"/gpp/*.h"))
+    files = glob.glob(location+"/root/*.cpp")
+    files.extend(glob.glob(location+"/root/*.h"))
     for item in files:
         dest = shutil.copyfile(item, folder+'/'+os.path.basename(item))
 
@@ -113,9 +89,9 @@ def launchtest(mycommands):
 print ""
 print "Detection of C++ compilers:"
 
-
 isgpp = False
 isclang = False
+isroot = False
 
 # g++
 p = subprocess.Popen("g++ --version", stdout=subprocess.PIPE, shell=True, stderr=subprocess.PIPE)
@@ -146,15 +122,68 @@ else:
         print " - Clang      FOUND      version "+words[2]
     isclang=True
 
-if isgpp:
-    print ""
-    print "Launching test for g++"
+
+print ""
+print "Detection of ROOT:"
+
+# root
+p = subprocess.Popen("root-config --version", stdout=subprocess.PIPE, shell=True, stderr=subprocess.PIPE)
+(output, err) = p.communicate()
+p_status = p.wait()
+if p_status!=0:
+    print " - Root       NOT FOUND"
+else:
+    words = output.split()
+    if len(words)<1:
+        print " - Root       FOUND      version UNKOWN"
+    else:
+        print " - Root       FOUND      version "+words[0]
+    isroot=True
+
+if isroot:
+    p = subprocess.Popen("root-config --cflags", stdout=subprocess.PIPE, shell=True, stderr=subprocess.PIPE)
+    (output, err) = p.communicate()
+    p_status = p.wait()
+    if p_status!=0:
+        print "   cflags:    NOT FOUND"
+        isroot=False
+    else:
+        words = output.split()
+        cflags = ' '.join(words)
+        print "   cflags:    "+cflags
+
+if isroot:
+    p = subprocess.Popen("root-config --libs", stdout=subprocess.PIPE, shell=True, stderr=subprocess.PIPE)
+    (output, err) = p.communicate()
+    p_status = p.wait()
+    if p_status!=0:
+        print "   libs:      NOT FOUND"
+        isroot=False
+    else:
+        words = output.split()
+        libs = ' '.join(words)
+        print "   libs:      "+cflags
+
+    
+print ""
+print "Check ROOT+g++:"
+if isroot and isgpp:
+    # FORMAT
+    # [ Test_name  Command_line  Produced_exectutable  returned_value  pattern_to_look_for  add_folder_to_lD_lIBRARY_PATH]
+    commands_gpp = [ ['the simpliest program','g++ '+cflags+' basic.cpp '+libs+' -o basic','basic',42,'BEGIN Test',False],\
+                     ['creating an histogram','g++ '+cflags+' histo.cpp '+libs+' -o histo','histo',42,'END Test',False] ]
     launchtest(commands_gpp)
 
-if isclang:
-    print ""
-    print "Launching test for clang"
+print ""
+print "Check ROOT+Clang:"
+if isroot and isclang:
+    # FORMAT
+    # [ Test_name  Command_line  Produced_exectutable  returned_value  pattern_to_look_for  add_folder_to_lD_lIBRARY_PATH]
+    commands_clang = [ ['the simpliest program','g++ '+cflags+' basic.cpp -lstdc++ '+libs+' -o basic','basic',42,'BEGIN Test',False],\
+                     ['creating an histogram','g++ '+cflags+' histo.cpp -lstdc++ '+libs+' -o histo','histo',42,'END Test',False] ]
     launchtest(commands_clang)
+
+
 
 print ""
 
