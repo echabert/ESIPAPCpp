@@ -14,7 +14,11 @@
 For testing that git manages to access GitHub from the internet, we propose you to clone a public repository which will be useful in the following.
  
   - Launching the console application.
-  - Type the command line `git clone https://github.com/echabert/ESIPAPCpp.git`
+  - Creating a work folder. For instance <br/>
+  ```cd ~````<br/>
+  ```mkdir workdir````<br/>
+  ```cd workdir```<br/>
+  - Typing the command line `git clone https://github.com/echabert/ESIPAPCpp.git`
   - If git works properly, a folder called `ESIPAPCpp` must appear on your disk.
 
 ## Step 2: Checking the C++ compiler
