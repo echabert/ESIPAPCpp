@@ -48,18 +48,32 @@ def launchtest(mycommands):
             print "            -> OK"
             continue
 
-        # execute the produced file
-        old = os.environ.get('LD_LIBRARY_PATH')
+        # setting LD_LIBRARY_PATH
+        old  = os.environ.get('LD_LIBRARY_PATH')
+        old2 = os.environ.get('DYLD_LIBRARY_PATH')
         if line[5]:
             if old==None:
                 os.environ['LD_LIBRARY_PATH']=folder+'/'
             else:
                 os.environ['LD_LIBRARY_PATH']=old+'/:'+folder+'/'
+            if old2==None:
+                os.environ['DYLD_LIBRARY_PATH']=folder+'/'
+            else:
+                os.environ['DYLD_LIBRARY_PATH']=old2+'/:'+folder+'/'
+
+        # execute the produced file
         p = subprocess.Popen('./'+line[2], stdout=subprocess.PIPE, shell=True, stderr=subprocess.PIPE, cwd=folder)
         (output, err) = p.communicate()
         p_status = p.wait()
-        os.environ['LD_LIBRARY_PATH']=old
-        
+		
+        # go back to old LD_LIBRARY_PATH		
+        if line[5]:
+            if old!=None:
+                os.environ['LD_LIBRARY_PATH']=old
+            if old2!=None:
+                os.environ['DYLD_LIBRARY_PATH']=old2
+
+        # result
         if p_status!=line[3]:
             print "            -> FAILURE: error during the execution of the generated file"
             continue
