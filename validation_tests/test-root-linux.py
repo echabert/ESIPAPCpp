@@ -176,7 +176,7 @@ if isroot:
     else:
         words = output.split()
         libs = ' '.join(words)
-        print "   libs:      "+cflags
+        print "   libs:      "+libs
 
     
 print ""
