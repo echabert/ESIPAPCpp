@@ -108,8 +108,8 @@ to higher dimension or to different type or graphics (TGraph, TProfile, etc).
 
 Launch the macro **FirstHisto.cpp**, click right on the hisgram and select **FitPanel** in the menuas described in the screenshots below.
 
-![FitPanel-access](Sessions4Files/FitPanel_1.png)
-![FitPanel-menu](Sessions4Files/FitPanel_2.png)
+![FitPanel-access](Session4Files/FitPanel_1.png)
+![FitPanel-menu](Session4Files/FitPanel_2.png)
 
 Playing with the graphical options, you can perform a gaussian fit.
   - Overlay the fitted function
