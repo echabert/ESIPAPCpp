@@ -1,77 +1,160 @@
-# Computing session 1: 
-#   Introduction to development tools
+# Computing session 1: Introduction to development tools
 
 This session should be done in 3 hours.
 You are advised to refer the the C++ lectures and the links given below in order to
-achieve the goals mentioned below.
-The subject (described in *Context*) as been given choosen to be simple in order to allow students to be focussed on getting familiar with the environment and good practices of C++ development.
+achieve the goals of this computing session.
 
-## Goals:
-  - Becoming familiar with C++ development environment
-  - Practicing basic C++ development with well structured files
-  - Producing a shared library
-  - Getting used to basic stl classes
+## Goals
+The subject of this first computing session is voluntarily simple in order to allow you to acquaint yourself with the environment and good practices of C++ development. During this session, you must write in C++ a program from scratch and step-by-step. The program to design and to code must be able to read data, acquired by a sensor device and encoded in a binary file, to decode them and to save them into a CSV which can be read by a spreadsheet like Excel or OpenCalc.
 
+## Skills to develop
+  - Becoming familiar with C++ development environment (compiler, linker, text editor, ...).
+  - Writing a simple C++ program.
+  - Manipulating bits in order to decipher data.
+  - Using the STL classes for reading/writing a file and for displaying informations at the screen.
+  - Structuring the program in functions and in different source files.
+  - Saving and sharing the C++ code with a version-control system (Git in our cases).
 
-## Context:
-The aim of the program is to read a binary file saved by a certain device, decode its content and allow an *a posterio* treatment if its data through the production of an output csv file.
+## Tools used
+   - **Compiler**: 
+       - on Linux/MacOSX machines, the default compiler is **g++**. Alternatively, **clang** can also be used.
+	   - on Windows machines, we use Visual Studio 2013 compiler, named **cl**.
+   - **Text editor**: feel free to use the editor of our choice:
+       - on the Linux virtual machine, several editors are available including emacs, gedit, nedit, vi/vim, ...
+	   - on Windows machines, the Visual Studio IDE (Integrated Development Environment) is recommended or a smart text editor such as [NotePad++](https://notepad-plus-plus.org/downloads/).   
+   - **Git**: requires to have an accound on [github](https://github.com/)
 
-## The tools:
-   - **editor**: feel free to use the editor of our choice. Several are available on virtual machine (including emacs, gedit, nedit, vi/vim)
-   - **compiler**: by default you can use **g++** (clang can also be used) 
-   - **git**: requires to have an accound on [github](https://github.com/)
-
-
-## Steps
+## Instructions
 
 In order to ease the realization of this computing session, it has been decomposed into short steps.
-At the end of each of them, you can compile and test our program becore going further.
+At the end of each of them, you can compile and test our program before going further.
 
+### Step 0: Preparing your work environment
 
-### Prerequisites
+#### Step 0.1: Downloading the instructions 
 
-#### Downloading our main github repository
+You must access to the last version of our instructions order to do the computing sessions. Please follow the instructions in order to have the updated code.
 
-   - On Linux/macOS, you can launch in a terminal the command
+   - Opening a new console session:
+     - On Linux/macOSX machines, you must click on the icon of the Terminal.
+	 - On Windows machines, you must open the program "VS2013 x86 Native Tools Command Prompt" (not the x64!).
+
+   - Creating a working folder
+     - On Linux/macOSX machines, you must issue the following commands:
+       ```
+          cd 
+          mkdir esipap_instructions
+		  cd esipap_instructions
+       ```
+     - On Windows machines, you must issue the following commands:	   
+        ```
+          cd C:\
+          mkdir esipap_instructions
+		  cd C:\workingdir
+        ```
+   - Download our main github repository by typing the command:
    ```
       git clone https://github.com/echabert/ESIPAPCpp.git
    ```
-   - On Windows but also other system, you can simply download an zip of the code (needed to be unzip)
+     Comment: This last step can also carry out by downloading a zip archive of the code (needed to be unzip)
    https://github.com/echabert/ESIPAPCpp/archive/main.zip
 
-You will then be able to access to all files
+#### Step 0.2: Creating your own repository
 
-#### Creating your private github repository for these sessions
+  - The goal of this section is to create a remote repository where you can save your results. You need to follow the instructions described in [../../doc/git/GitRepository.md](the section GitRepository).
 
-The goal of this section is to save your results into the revisionning software **git**.
-You need to follow the instructions described in [../../doc/git/GitRepository.md](the section GitRepository).
-Once the repository is created, you can *download it* (*clone* it) by using the command:
-```
-git clone https://github.com/your_username/ESICppCS.git
-```
-where your\_username as to be replace by your username.
-A password will be asked.
-Then follow the instructions:
-   - Go to the directory<br/>
-   On Linux/Windows you can use the command ```cd ESICppCS```
-   - Create a directory "Session1" <br/>
-   On Linux/Windows you can use the command ```mkdir Session1```
-   - Create an helloworld.cpp file <br/>
-   ```#include <
-   - Add our file
-   ```
-   git add MYFILE
-   ```
-   - Commit our file
-   ```
-   git commit -m 'first commit for test' MYFILE
-   ```
-   - Push our file into our directory
-   ```
-   git push
-   ```
+   - Opening a new console session:
+     - On Linux/macOSX machines, you must click on the icon of the Terminal.
+	 - On Windows machines, you must open the program "VS2013 x86 Native Tools Command Prompt" (not the x64!).
 
-### Step 1: using stl classes
+   -  Once the repository is created, you can *download it* (*clone* it). To do that, first, opening a new console session:
+     - On Linux/macOSX machines, you must issue the following commands:
+       ```
+          cd 
+          mkdir esipap_sessions
+		  cd esipap_sessions
+       ```
+     - On Windows machines, you must issue the following commands:	   
+        ```
+          cd C:\
+          mkdir esipap_sessions
+		  cd C:\esipap_sessions
+        ```
+   - Downloading your github repository by typing the command:
+     ```
+       git clone https://github.com/your_username/ESICppCS.git
+     ```
+     where your\_username as to be replaced by your username.
+     A password will be asked.
+
+#### Step 0.3: Creating your working folder for Computing Session 1
+
+  - In a console session, entering the folder ```ESICppCS``` by issuing the command lines:
+	   - On Linux/MacOSX machines: ```cd ~/esipap_sessions/ESICppCS```
+	   - On Windows machines: ```cd C:\esipap_sessions\ESICppCS```
+	   
+  - Creating a folder devoted to Computing Session 1 code: 
+	```
+	   mkdir Session1
+	   cd Session1
+	```
+	
+  - In the folder ```Session1```, creating a new text file called ```readme.txt``` containing the sentence ```Folder corresponding to ESIPAP-2021 Computing Session 1```
+	
+  - Telling Git that you have added a new file by issue the command line in the console:
+      ```git add readme.txt```
+	  
+  - Recording the changes to the local repository with the following command:
+	  ```git commit -m 'add readme.txt file` readme.txt```
+	  
+  - Propagating the changes to the remote repository with the following command:
+	  ```git push```
+
+
+### Step 1: Creating, building and running a 'Hello World!' program
+
+   - In the folder `Session1` folder, creating a source file called `helloworld.cpp` with the following content:
+     ```
+	   #include<iostream>
+	   
+	   int main()
+	   {
+	     std::cout << "Hello World!" << std::endl;
+		 return 0;
+	   }
+	 ```
+	 
+   - The way to build this program depends on your machine:
+       - On Linux/MacOSX machines, the building (compilation + link + creation of an executable file called `helloworld`) can be done by typing the command `
+	     ```
+		   g++ helloworld.cpp -c helloworld
+		 ```
+	   - On Windows machines by using command lines, the building (compilation + link + creation of an executable file called `helloworld.exe`) can be done by typing the command `
+	     ```
+		   cl helloworld.cpp -c helloworld.exe
+		 ```
+	   - On Windows machines by using the Visual Studio interface, the building (compilation + link + creation of an executable file called `helloworld.exe`) can be done by following the different steps:
+	   
+          - ERIC TO DOCUMENT
+		  - ERIC TO DOCUMENT
+
+   - Executing the program:
+       - On Linux/MacOSX machines: ```./helloworld```
+	   - On Windows machines by using command lines: ```helloworld```
+	   - On Windows machines by using the Visual Studio interface: click on the button "Local Windows Debugger"
+	  
+   - Saving the code in the remote repository:
+	
+	  - Telling Git that you have added a new file by issue the command line in the console:
+      ```git add helloworld.cpp```
+	  
+      - Recording the changes to the local repository with the following command:
+	  ```git commit -m 'add helloworld program' helloworld.cpp```
+	  
+      - Propagating the changes to the remote repository with the following command:
+	  ```git push```
+	  
+### Step 2: using STL classes
 
 The goal of this section is to be able to utilize classes available in the Standard Template Library (stl).
 For our application, several classes will be useful:
