@@ -50,13 +50,13 @@ You must access to the last version of our instructions order to do the computin
         ```
           cd C:\
           mkdir esipap_instructions
-		  cd C:\workingdir
+		  cd C:\esipap_instructions
         ```
    - Download our main github repository by typing the command:
    ```
       git clone https://github.com/echabert/ESIPAPCpp.git
    ```
-     Comment: This last step can also carry out by downloading a zip archive of the code (needed to be unzip)
+     Comment: This last step can also be carried out by downloading a zip archive of the code (needed to be unzip)
    https://github.com/echabert/ESIPAPCpp/archive/main.zip
 
 #### Step 0.2: Creating your own repository
@@ -115,13 +115,21 @@ You must access to the last version of our instructions order to do the computin
 
    - In the folder `Session1` folder, creating a source file called `helloworld.cpp` with the following content:
      ```
-	   #include<iostream>
-	   
-	   int main()
-	   {
-	     std::cout << "Hello World!" << std::endl;
-		 return 0;
-	   }
+       #include<iostream>
+       using namespace std;
+
+       int main()
+       {
+	     // Core program
+	     cout << "Hello World!" << endl;
+	
+	     // Wait that user pushes a button (relevant for Windows system)
+	     cout << "Push a button to quit" << endl;
+	     cin.get();
+		 
+		 // Return no error code
+	     return 0;
+       }	   
 	 ```
 	 
    - The way to build this program depends on your machine:
@@ -131,12 +139,17 @@ You must access to the last version of our instructions order to do the computin
 		 ```
 	   - On Windows machines by using command lines, the building (compilation + link + creation of an executable file called `helloworld.exe`) can be done by typing the command `
 	     ```
-		   cl helloworld.cpp -c helloworld.exe
+		   cl helloworld.cpp /link /out:helloworld.exe
 		 ```
 	   - On Windows machines by using the Visual Studio interface, the building (compilation + link + creation of an executable file called `helloworld.exe`) can be done by following the different steps:
-	   
-          - ERIC TO DOCUMENT
-		  - ERIC TO DOCUMENT
+    	  - Creating a new *project* or *solution* and selecting a Win32 console program such as below:<br/>
+		      ![formula](../doc/session1/vs2013a.png)
+    	  - Selecting that you would like an empty solution as below<br/>
+		      ![formula](../doc/session1/vs2013b.png)
+		  - In the windows *Solution explorer*, making a right click on `Sources files`, then `Add`, `Create a new item` and finally `a cpp file`.<br/>
+		      ![formula](../doc/session1/vs2013c.png)
+          - Building the program by clicking on the button "Local Windows Debugger"	or using the shortcut CTRL+F5.	  
+		  
 
    - Executing the program:
        - On Linux/MacOSX machines: ```./helloworld```
@@ -154,108 +167,127 @@ You must access to the last version of our instructions order to do the computin
       - Propagating the changes to the remote repository with the following command:
 	  ```git push```
 	  
-### Step 2: using STL classes
+### Step 2: Decoding a binary file by using STL classes
 
-The goal of this section is to be able to utilize classes available in the Standard Template Library (stl).
-For our application, several classes will be useful:
-   - [ifstream](http://www.cplusplus.com/reference/fstream/ifstream/) : a class which allow to open file
-   - [ofstream](http://www.cplusplus.com/reference/fstream/ofstream/) : a class which allow to write file
-   - [cout](http://www.cplusplus.com/reference/iostream/cout/?kw=cout): an object of the class ostream that represents the standard output stream 
-   - [vector](http://www.cplusplus.com/reference/vector/vector/?kw=vector): a template class that is a container representing an arrays that can change in size
+The goal of this section is to design a program which allows you to open a file, decode a binary content and display the content at the screen.
 
-Write a program which:
-   - Write a message to inform users that the program has started 
-   - Open a **binary** file *data.dat* which is available HERE
-   - Write an error message if something went wrong during this operation
-   - Close the file 
-   - Write a message to inform users that the program ended
+**Specifications of the program:** only one source file called `DataReader.cpp`
 
-Note that we don't yet try to read the file content as it is in a binary mode.
-This will be the goal of the next step.
-Save, compile and test our program before going to the next step.
+  - The code must open the binary file `sensor.dat` and check that the file is properly opened. This file can be found in:
+    - on Linux/MacOSX machines: `~/esipap_instructions/Session1/sensor.dat`
+	- on Windows machines: `C:\esipap_instructions\Session1\sensor.dat`
+	  
+  - The code must extract the data from the file. In order to achieve this task, the developer needs to know the data structure used to encode the content. It is given by the figure below.<br/>
+       ![dataformat](../doc/session1/dataformat.png)
+	   	  
+  - The code must decode the data. `EnergyData1` and `EnergyData2` are not enciphered. The decoding relation for the other data are given by the formula below.<br/>
+       ![formula](../doc/session1/formula.png)
+	   
+  - Finally, the code must display at the screen the decoded values.
+	
+**Instructions:**
 
-### Step 2: binary decoding 
+  - Writing the `DataReader.cpp` file.
+  - Building the program and creating an executable file.
+  - Launching the program and check that you obtain the following output.
+	```
+	   E1=127  E2=255  T=44.9963[°C]  P=109972[Pa]  RH=55.0342[%]
+	```
+  - Saving your code by using properly the commands `git add`, `git commit` and `git push`.
+  
+**Piece of advice:**
+  - You have to use several classes from the Standard Template Library (STL), in particular:
+     - [ifstream](http://www.cplusplus.com/reference/fstream/ifstream/) : a class which allow to open file
+	 - [cout](http://www.cplusplus.com/reference/iostream/cout/?kw=cout): an object of the class ostream that represents the standard output stream 
+  - Do not wait to finish to write the code before testing it. It is advised that you should build and test the code regularly.
+  - Put some comments in your code in order to explain what you are doing.
+  - For displaying properly a the screen the unit `°C`, you can type `cout << "\370" << "C";`
 
-The goal of this section is to decode the binary content of the file opened in step 1.
-In order to achieve this task, the developper need to know the data structure used to encode the content.
-If this is not the case, meaningless results or even errors could be obtained. 
-The data structure in our case, can be summarize as described below:
+### Step 3: Decoding a binary file with multiple data
 
+The previous file `sensor.dat` contents only one sensor acquisition. Now, we would like to extend the previous program to the reading of a 100-acquisition binary file. This file can be found here:
+  - on Linux/MacOSX machines: `~/esipap_instructions/Session1/sensor2.dat`
+  - on Windows machines: `C:\esipap_instructions\Session1\sensor2.dat`
 
-Modify you program to:
-   - Read the values sequentially
-   - Write them with cout commands
+The goal of this section is to design a program which allows you to open a file, decode a binary content and display the content at the screen.
 
-Save, compile and test our program before going to the next step.
-In order to check that you program is working properly, the values value you should read are:
-XXX
+**Specifications of the program:** only one source file called `DataReader.cpp`
+  - The code must extract the data from the 100-acquisition file `sensor2.dat`.
+  - The code must display them at the screen (one line an acquisition).
+  
+**Instructions:**
+  - Adapting the `DataReader.cpp` file.
+  - Building the program and creating an executable file.
+  - Saving your code by using properly the commands `git commit` and `git push`.  
+  
+### Step 4: Converting the binary file to a human-readable format
 
-### Step 3: exporting the data in a human readable format: csv file
+The goal of this section is to produce a CSV file (Comma Separated Value) from the numerical values corresponding to the data. The produced CSV output file could later be tested by other program/applications such as `OpenOffice`or `Excel`.
 
-The goal of this section is to produce a csv file (comma separated value) with numerical values corresponding the data: *output.csv*.
-The produced output file could later be tested by other program/applications such as OpenOffice/Excell.
-Instructions:
-   - Open a new file in writing mode: an instance of [ofstream](http://www.cplusplus.com/reference/fstream/ofstream/)
-   - Write the data in a structured way: values separated by a comma, one line per entry into the csv file
-   - Write a short report into the terminal (cout command) at the end of the reading to report the number of entries.
+**Specifications of the program:** only one source file called `DataReader.cpp`
+   - The code must extract the data from the 100-acquisition file `sensor2.dat`.
+   - The code must display them at the screen (one line an acquisition).
+   - The code must open a new file in writing mode called `sensor2.csv` and write the data in a structured way: values separated by a comma, one line per entry into the CSV file.
 
-Save, compile and test our program before going to the next step.
+**Instructions:**
+  - Adapting the `DataReader.cpp` file.
+  - Building the program and creating an executable file.
+  - Running the executable file and checking the production of the file `sensor2.csv`.
+  - Comparing the size of the binary file and the CSV file. How can you intepret the difference?
+  - Opening the CSV file with a spreadsheet such as `Excel` or `OpenOffice` and producing one graphic with the temperature data for instance.
+  - Saving your code by using properly the commands `git commit` and `git push`. 
 
+**Piece of advice:**
+  - You have to use several classes from the Standard Template Library (STL), in particular:
+    - [ofstream](http://www.cplusplus.com/reference/fstream/ofstream/) : a class which allow to write file
+  
+### Step 5: Using functions in your codes
 
-Tests:
-   - Compare the size of the binary file and the csv file. How can you intepret the difference ?
-   - Open the file with an external program as mentioned earlier and check the integrity of the data
-   - Produce the graphics of XXXX
-
-
-### Step 4: use of a function
-
-The goal of this section is to move the block of instructions that deal with the binary decoding into a well-defined function in order to be reused in other applications if needed.
+The goal of this section is to move the block of instructions that handle the binary decoding into a well-defined function in order to be reused in other applications if needed.
 In order to do this, you need to:
-   - Define properly the prototype of the function (return type and ordered list of arguments with there type)
-   - Implement the function *Decoding*
-   - Call the function in the *main*
 
-You have the freedom to design the prototype as you which.
+**Specifications of the program:** only one source file called `DataReader.cpp`
+   - Defining properly the prototype of the function callled *Decoding* (return type and ordered list of arguments with there type). You have the freedom to design the prototype as you which.
+   - Implementing the function *Decoding*.
+   - Calling the function in the *main*.
 
-Save, compile and test our program before going to the next step.
+**Instructions:**
+  - Adapting the `DataReader.cpp` file.
+  - Building the program and creating an executable file.
+  - Testing the program.
+  - Saving your code by using properly the commands `git commit` and `git push`.  
 
-
-### Step 5: file splitting
+### Step 6: File splitting
 
 The goal of this section is to split the program into 3 files:
-   - An header file containing the prototype of the function: *Decode.h*
-   - A source file containing the definition of the function: *Decode.cpp*
-   - A main file containing the function main: *main.cpp*
+  - An header file containing the prototype of the function: *Decode.h*
+  - A source file containing the definition of the function: *Decode.cpp*
+  - A main file containing the function main: *main.cpp*
 
-Few advices:
-   - The header file need to be protected against multiple inclusion
-   - The compilation can be done in several step as there is 2 cpp files
+**Instructions:**
+  - Adapting the `DataReader.cpp` file.
+  - Building the program and creating an executable file.
+  - Testing the program.
+  - Saving your code by using properly the commands `git add`, `git commit` and `git push`.  
+  
+**Piece of advice:**
+   - The header files need to be protected against multiple inclusion.
+   - The compilation can be done in several step as there is 2 cpp files.
 
-Save, compile and test our program before going to the next step.
-
-
-### Step 6: creating a library
-
-The goal of this section is to create a shared library.
-In our application, this library will only contain the decoding function.
-Relevant instructions have been given during the lecture.
-You can refer to them.
-Actions to be done:
-   - Create a shared library decode.so (.dylib or .dll)
-   - Link the library to the executable  (*main*)
-
-Excute the program to check that the compilation chain and the link edition worked well.
-
-
-
-
-
-
-### Step 7: going further
+### Optional Step: going further
 
 This last step is **not mandatory**. 
 If you have already finished the previous steps and want to go further, we provide you several options:
-   - Use arguments of the *main* function to pass the name of the input file into the command line
-   - Compute basic statistics (mean and std-deviation) for each of the main variables and report them at the end of the execution
+   - Use arguments of the *main* function to pass the name of the input file into the command line.
+   - Compute basic statistics (mean and std-deviation) for each of the main variables and report them at the end of the execution.
 
+
+[//]: # (### Step 6: creating a library)
+[//]: # (The goal of this section is to create a shared library.)
+[//]: # (In our application, this library will only contain the decoding function.)
+[//]: # (Relevant instructions have been given during the lecture.)
+[//]: # (You can refer to them.)
+[//]: # (Actions to be done:)
+[//]: # (- Create a shared library decode.so (.dylib or .dll))
+[//]: # (- Link the library to the executable  (*main*))
+[//]: # (Excute the program to check that the compilation chain and the link edition worked well.)
