@@ -177,7 +177,7 @@ The goal of this section is to design a program which allows you to open a file,
     - on Linux/MacOSX machines: `~/esipap_instructions/Session1/sensor.dat`
 	- on Windows machines: `C:\esipap_instructions\Session1\sensor.dat`
 	  
-  - The code must extract the data from the file. In order to achieve this task, the developer needs to know the data structure used to encode the content. It is given by the figure below.<br/>
+  - The code must extract the data from the file. In order to achieve this task, the developer needs to know the data structure used to encode the content. It is given by the figure below. One acquisition corresponds to 7 bytes *i.e* 56 bits.<br/>
        ![dataformat](../doc/session1/dataformat.png)
 	   	  
   - The code must decode the data. `EnergyData1` and `EnergyData2` are not enciphered. The decoding relation for the other data are given by the formula below.<br/>
