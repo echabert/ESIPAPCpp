@@ -177,10 +177,11 @@ The goal of this section is to design a program which allows you to open a file,
     - on Linux/MacOSX machines: `~/esipap_instructions/Session1/sensor.dat`
 	- on Windows machines: `C:\esipap_instructions\Session1\sensor.dat`
 	  
-  - The code must extract the data from the file. In order to achieve this task, the developer needs to know the data structure used to encode the content. It is given by the figure below. One acquisition corresponds to 7 bytes *i.e* 56 bits.<br/>
+  - The code must extract and store in memory the 7-byte data from the file. 
+     	  
+  - The code must decode the data. In order to achieve this task, the developer needs to know the data structure used to encode the content. It is given by the figure below. One acquisition corresponds to 7 bytes *i.e* 56 bits.<br/>
        ![dataformat](../doc/session1/dataformat.png)
-	   	  
-  - The code must decode the data. `EnergyData1` and `EnergyData2` are not enciphered. The decoding relation for the other data are given by the formula below.<br/>
+    Data `EnergyData1` and `EnergyData2` are not enciphered. The decoding relation for the other data are given by the formula below.<br/>
        ![formula](../doc/session1/formula.png)
 	   
   - Finally, the code must display at the screen the decoded values.
@@ -191,7 +192,7 @@ The goal of this section is to design a program which allows you to open a file,
   - Building the program and creating an executable file.
   - Launching the program and check that you obtain the following output.
 	```
-	   E1=127  E2=255  T=44.9963[°C]  P=109972[Pa]  RH=55.0342[%]
+	   E1=127  E2=255  T=44.9963[°C]  P=109972[Pa]  RH=54.902[%]
 	```
   - Saving your code by using properly the commands `git add`, `git commit` and `git push`.
   
@@ -199,6 +200,7 @@ The goal of this section is to design a program which allows you to open a file,
   - You have to use several classes from the Standard Template Library (STL), in particular:
      - [ifstream](http://www.cplusplus.com/reference/fstream/ifstream/) : a class which allow to open file
 	 - [cout](http://www.cplusplus.com/reference/iostream/cout/?kw=cout): an object of the class ostream that represents the standard output stream 
+	 - [vector](http://www.cplusplus.com/reference/vector/vector/?kw=vector): a class which describes an array of n objects 	 
   - Do not wait to finish to write the code before testing it. It is advised that you should build and test the code regularly.
   - Put some comments in your code in order to explain what you are doing.
   - For displaying properly a the screen the unit `°C`, you can type `cout << "\370" << "C";`
