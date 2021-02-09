@@ -39,7 +39,7 @@ You must access to the last version of our instructions order to do the computin
       - On Linux/macOSX machines, you must click on the icon of the Terminal.
 	  - On Windows machines, you must open the program "VS2013 x86 Native Tools Command Prompt" (not the x64!).
 
-   - Creating a working folder:
+   - Creating a working folder:<br/>
       - On Linux/macOSX machines, you must issue the following commands:<br/>
         ```
         cd 
