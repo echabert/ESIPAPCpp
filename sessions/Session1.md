@@ -61,7 +61,7 @@ You must access to the last version of our instructions order to do the computin
 
 #### Step 0.2: Creating your own repository
 
-  - The goal of this section is to create a remote repository where you can save your results. You need to follow the instructions described in [../../doc/git/GitRepository.md](the section GitRepository).
+  - The goal of this section is to create a remote repository where you can save your results. You need to follow the instructions described in [the section Git Repository](../doc/git/GitRepository.md).
 
    - Opening a new console session:
      - On Linux/macOSX machines, you must click on the icon of the Terminal.
