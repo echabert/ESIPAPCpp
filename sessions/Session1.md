@@ -42,20 +42,20 @@ You must access to the last version of our instructions order to do the computin
    - Creating a working folder
      - On Linux/macOSX machines, you must issue the following commands:
        ```
-          cd 
-          mkdir esipap_instructions
-		  cd esipap_instructions
+       cd 
+       mkdir esipap_instructions
+	   cd esipap_instructions
        ```
      - On Windows machines, you must issue the following commands:	   
-        ```
-          cd C:\
-          mkdir esipap_instructions
-		  cd C:\esipap_instructions
-        ```
+       ```
+       cd C:\
+       mkdir esipap_instructions
+	   cd C:\esipap_instructions
+       ```
    - Download our main github repository by typing the command:
-   ```
-      git clone https://github.com/echabert/ESIPAPCpp.git
-   ```
+     ```
+     git clone https://github.com/echabert/ESIPAPCpp.git
+     ```
      Comment: This last step can also be carried out by downloading a zip archive of the code (needed to be unzip)
    https://github.com/echabert/ESIPAPCpp/archive/main.zip
 
