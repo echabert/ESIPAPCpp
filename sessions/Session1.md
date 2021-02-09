@@ -36,22 +36,22 @@ At the end of each of them, you can compile and test our program before going fu
 You must access to the last version of our instructions order to do the computing sessions. Please follow the instructions in order to have the updated code.
 
    - Opening a new console session:
-     - On Linux/macOSX machines, you must click on the icon of the Terminal.
-	 - On Windows machines, you must open the program "VS2013 x86 Native Tools Command Prompt" (not the x64!).
+      - On Linux/macOSX machines, you must click on the icon of the Terminal.
+	  - On Windows machines, you must open the program "VS2013 x86 Native Tools Command Prompt" (not the x64!).
 
    - Creating a working folder
-     - On Linux/macOSX machines, you must issue the following commands:
-       ```
-       cd 
-       mkdir esipap_instructions
-	   cd esipap_instructions
-       ```
-     - On Windows machines, you must issue the following commands:	   
-       ```
-       cd C:\
-       mkdir esipap_instructions
-	   cd C:\esipap_instructions
-       ```
+      - On Linux/macOSX machines, you must issue the following commands:
+        ```
+        cd 
+        mkdir esipap_instructions
+	    cd esipap_instructions
+        ```
+      - On Windows machines, you must issue the following commands:	   
+        ```
+        cd C:\
+        mkdir esipap_instructions
+	    cd C:\esipap_instructions
+        ```
    - Download our main github repository by typing the command:
      ```
      git clone https://github.com/echabert/ESIPAPCpp.git
