@@ -1,6 +1,6 @@
 # Specifications of the class *PsychrometricCalculator*
 
-The class to implement is called StatisticsCalculator and must be able to compute a number
+The class to implement is called *StatisticsCalculator* and must be able to compute a number
 of common statistical values including standard deviation, mean, mediane, and more.
 
 ## Step 2.1: first implementation
