@@ -69,14 +69,15 @@ You must access to the last version of our instructions order to do the computin
      - On Linux/macOSX machines, you must click on the icon of the Terminal.
 	 - On Windows machines, you must open the program "VS2013 x86 Native Tools Command Prompt" (not the x64!).
 
-   -  Once the repository is created, you can *download it* (*clone* it). To do that, first, opening a new console session:
-     - On Linux/macOSX machines, you must issue the following commands:
+   -  Once the repository is created, you can *download it* (*clone* it). To do that, first, opening a new console session:<br/>
+   
+     - On Linux/macOSX machines, you must issue the following commands:<br/>
        ```
        cd 
        mkdir esipap_sessions
 	   cd esipap_sessions
        ```
-     - On Windows machines, you must issue the following commands:	   
+     - On Windows machines, you must issue the following commands:<br/>	   
         ```
         cd C:\
         mkdir esipap_sessions
