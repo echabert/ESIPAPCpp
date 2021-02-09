@@ -44,8 +44,8 @@ You must access to the last version of our instructions order to do the computin
         ```
         cd 
         mkdir esipap_instructions
-	    cd esipap_instructions
-        ```
+	    cd esipap_instructions```
+        
       - On Windows machines, you must issue the following commands:	   
         ```
         cd C:\
