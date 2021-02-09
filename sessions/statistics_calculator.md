@@ -14,12 +14,11 @@ of common statistical values including standard deviation, mean, mediane, and mo
   
   - Then you must add the private data member. By conventions, data member have a name in lower case finishing by an underscore charater *_*.
     - The class must contain the data to analyze. For that, the data must be contained in an
-array of double values called *data_*. It is advised that you should use the *vector* class of the STL library. Default value: array is empty.
-    - The class must contain the maximum number of element that can be put in the data collection *nmax_*. Default value: 1000.
+vector of double values called *data_*. It is advised that you should use the *vector* class of the STL library. Default value: the data array is empty.
 	
   - You must add two constructors:
     - one constructor with no argument where data members will be initialized to the default values.
-    - one constructor with a second constructor with the number of maximum elements in argument.
+    - one constructor with a second constructor with a vector of double values in argument.
 	
   - You must add one destructor.
 	
@@ -34,12 +33,11 @@ array of double values called *data_*. It is advised that you should use the *ve
 
 **Specifications:**
   - You must add to the class some mutators in order to change the values of the data members:
-     - the function *SetArray* for filling the data member called *array_*
-	 - the function *SetNMax* for filling the data member called *nmax_* 
+     - the function *SetData* for filling the data member called *data_*.
 	 
   - You must add to the class some accessors in order to access the valuers of the data members:
-     - the function *SetArray* for filling the data member called *array_*
-	 - the function *SetNMax* for filling the data member called *nmax_*   
+     - the function *GetData* for getting the data member called *data_*.
+	 - the function *GetNumber* for getting the size of the data member called *data_*.   
   
   - Finally the class must contain a function *Clear* for respectively reseting the data member (set to default value).
    
@@ -60,6 +58,7 @@ array of double values called *data_*. It is advised that you should use the *ve
 **Instructions:**
   - Implementing the code and updating the file *main.cpp* for using and testing the class implementation.
   - Building and testing the program to check the class implementation.
+  - Does your code work when *data_* is empty? Please check this case and fix your code if it does not tolerate a such case.
  
 ## Step 2.4: enriching the structure of the class
 
