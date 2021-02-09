@@ -71,18 +71,18 @@ You must access to the last version of our instructions order to do the computin
 
    -  Once the repository is created, you can *download it* (*clone* it). To do that, first, opening a new console session:<br/>
    
-     - On Linux/macOSX machines, you must issue the following commands:<br/>
-       ```
-       cd 
-       mkdir esipap_sessions
-	   cd esipap_sessions
-       ```
-     - On Windows machines, you must issue the following commands:<br/>	   
+      - On Linux/macOSX machines, you must issue the following commands:<br/>
         ```
-        cd C:\
+        cd 
         mkdir esipap_sessions
-		cd C:\esipap_sessions
+	    cd esipap_sessions
         ```
+      - On Windows machines, you must issue the following commands:<br/>	   
+         ```
+         cd C:\
+         mkdir esipap_sessions
+	     cd C:\esipap_sessions
+         ```
    - Downloading your github repository by typing the command:
      ```
        git clone https://github.com/your_username/ESICppCS.git
