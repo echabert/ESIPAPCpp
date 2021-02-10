@@ -138,7 +138,7 @@ You must access to the last version of our instructions order to do the computin
    - The way to build this program depends on your machine:
        - On Linux/MacOSX machines, the building (compilation + link + creation of an executable file called `helloworld`) can be done by typing the command `
 	     ```
-		   g++ helloworld.cpp -c helloworld
+		   g++ -o helloword helloworld.cpp
 		 ```
 	   - On Windows machines by using command lines, the building (compilation + link + creation of an executable file called `helloworld.exe`) can be done by typing the command `
 	     ```
