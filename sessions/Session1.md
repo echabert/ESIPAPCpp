@@ -285,14 +285,3 @@ This last step is **not mandatory**.
 If you have already finished the previous steps and want to go further, we provide you several options:
    - Use arguments of the *main* function to pass the name of the input file into the command line.
    - Compute basic statistics (mean and std-deviation) for each of the main variables and report them at the end of the execution.
-
-
-[//]: # (### Step 6: creating a library)
-[//]: # (The goal of this section is to create a shared library.)
-[//]: # (In our application, this library will only contain the decoding function.)
-[//]: # (Relevant instructions have been given during the lecture.)
-[//]: # (You can refer to them.)
-[//]: # (Actions to be done:)
-[//]: # (- Create a shared library decode.so (.dylib or .dll))
-[//]: # (- Link the library to the executable  (*main*))
-[//]: # (Excute the program to check that the compilation chain and the link edition worked well.)

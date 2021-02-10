@@ -39,6 +39,7 @@ We ask you to to it before the beginning of the sessions.
   - [Instruction to create a github account](doc/git/GitAccount.md)
 
 ## List of computing sessions:
+  - [Introduction](sessions/introduction.pdf) and [Assessment skill list](sessions/assessment_skill_list.pdf)
   - [Session 1: Introduction to development tools](sessions/Session1.md)
   - [Session 2: Class development](sessions/Session2.md)
   - [Session 3: Project on environmental conditions](Session3.md)
