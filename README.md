@@ -40,6 +40,9 @@ We ask you to to it before the beginning of the sessions.
 
 ## List of computing sessions:
   - [Introduction](sessions/introduction.pdf) and [Assessment skill list](sessions/assessment_skill_list.pdf)
+  - Please fill the following [form](https://docs.google.com/spreadsheets/d/1gFSvKBftet2fNYOBZTTz06iXTf88OLIXvaHBbdY7pJE/edit?usp=sharing) with the link to the github repository.
+  
+  
   - [Session 1: Introduction to development tools](sessions/Session1.md)
   - [Session 2: Class development](sessions/Session2.md)
   - [Session 3: Project on environmental conditions](Session3.md)
