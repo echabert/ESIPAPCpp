@@ -35,7 +35,7 @@ of common statistical values including standard deviation, mean, mediane, and mo
 
 **Specifications:**
   - You must add to the class some mutators in order to change the values of the data members:
-    - *SetTemperatureAbsoluteHumidityPressure* for setting together all the data members. The units of the inputs are Celsius degree for temperature, kg
+    - *SetTemperatureAbsoluteHumidityPressure* for setting together all the data members. The units of the inputs are K for temperature, kg
 water / kg dry air for absolute humidity and bar for pressure.
 	 
   - You must add to the class some accessors in order to access the valuers of the data members:
@@ -59,7 +59,7 @@ according to Equation 1.
 according to Equation 2.
     - *GetSpecificVolume*: computing and returning the air specific volume [ in m3 / kg dry air ] according to Equation 4.
 
-  - The class must contain the mutator SetTemperatureAbsoluteHumidityPressure for setting the data members. The units of the inputs are K for temperature, kg water / kg dry air for absolute humidity and Pa for pressure.
+  - The class must contain the mutator SetTemperatureRelativeHumidityPressure for setting the data members. The units of the inputs are K for temperature, % for relative humidity and Pa for pressure.
 
 All the thermics formula can be found in this [PDF file](psychrometric_formulas.pdf).
 
