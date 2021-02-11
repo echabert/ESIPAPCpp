@@ -57,7 +57,7 @@ The results should be the following one.
 
 #### Data visualization: Csv2Plot.cpp
 
-The goal is to write a new file **Csv2Plot.cpp** containing an eponym function which will read the CSV file produced during the first session (the file can also be retrieved HERE) and produce basic one-dimensional histograms.
+The goal is to write a new file **Csv2Plot.cpp** containing an eponym function which will read the CSV file produced during the first session (the file can also be retrieved [HERE](session4/sensor2.csv)) and produce basic one-dimensional histograms.
    - Read the CSV file
    - Display each variable into a dedicated TH1F (using the method **Fill**)
    - Choose different color line for each histogram
