@@ -84,7 +84,7 @@ In the context of a project, two classes must be implemented: *StatisticsCalcula
   - The class *StatisticsCalculator* must deal with a set of data and offer useful relevant statistical functions which can provide the average, the mediane, the standard deviation, ... Trough this implementation, the developer will pratice the manipulation of arrays.
   - The class *PsychrometricCalculator* must compute the thermics properties of the humid air from the temperature and relative humidity inputs. Through this implementation, the developer will pratice the coding of mathematical formulas.
 
-Please choose one of this class to implement and specify your choice on this [form](https://docs.google.com/forms/d/e/1FAIpQLSfhF9s2nDxMF_NMApJfRwutYYJDAixQ_NBCOEShyL892jF0Mg/viewform?usp=pp_url).
+Please choose one of this class to implement and specify your choice on this [form](https://docs.google.com/forms/d/e/1FAIpQLSeqoWcfVSY4aO8FlfHdYBqJdOmztgNeQJa1ihJvOu0r5eUAzQ/viewform?usp=sf_link)
 
 ### Step 2: Implementing the class chosen
 
