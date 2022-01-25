@@ -177,8 +177,8 @@ The goal of this section is to design a program which allows you to open a file,
 **Specifications of the program:** only one source file called `DataReader.cpp`
 
   - The code must open the binary file `sensor.dat` and check that the file is properly opened. This file can be found in:
-    - on Linux/MacOSX machines: `~/esipap_instructions/Session1/sensor.dat`
-	- on Windows machines: `C:\esipap_instructions\Session1\sensor.dat`
+    - on Linux/MacOSX machines: `~/esipap_instructions/sessions/session1/sensor.dat`
+	- on Windows machines: `C:\esipap_instructions\sessions\session1\sensor.dat`
 	  
   - The code must extract and store in memory the 7-byte data from the file. 
      	  
@@ -211,8 +211,8 @@ The goal of this section is to design a program which allows you to open a file,
 ### Step 3: Decoding a binary file with multiple data
 
 The previous file `sensor.dat` contents only one sensor acquisition. Now, we would like to extend the previous program to the reading of a 100-acquisition binary file. This file can be found here:
-  - on Linux/MacOSX machines: `~/esipap_instructions/Session1/sensor2.dat`
-  - on Windows machines: `C:\esipap_instructions\Session1\sensor2.dat`
+  - on Linux/MacOSX machines: `~/esipap_instructions/sessions/session1/sensor2.dat`
+  - on Windows machines: `C:\esipap_instructions\sessions/session1\sensor2.dat`
 
 The goal of this section is to design a program which allows you to open a file, decode a binary content and display the content at the screen.
 
