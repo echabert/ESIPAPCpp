@@ -59,11 +59,11 @@ The results should be the following one.
 
 The goal is to write a new file **Csv2Plot.cpp** containing an eponym function which will read the CSV file produced during the first session (the file can also be retrieved [HERE](session4/sensor2.csv)) and produce basic one-dimensional histograms.
    - Read the CSV file
-   - Display each variable into a dedicated TH1F (using the method **Fill**)
+   - Display each variable into a dedicated [TH1F](https://root.cern.ch/doc/master/classTH1F.html) (using the method **Fill**)
    - Choose different color line for each histogram
-   - Overlay the histograms related to XX in a TCanvas
-   - Add a legend using the class **TLegend**
-   - Save the resulting display (TCanvas) into a pdf file (using the method **Print**)
+   - Overlay the histograms related to XX in a [TCanvas](https://root.cern.ch/doc/master/classTCanvas.html)
+   - Add a legend using the class [TLegend](https://root.cern.ch/doc/master/classTLegend.html)
+   - Save the resulting display ([TCanvas](https://root.cern.ch/doc/master/classTCanvas.html)) into a pdf file (using the method **Print**)
 
 **Save the file in our git repository**
 
@@ -104,7 +104,7 @@ Instead of using macros and CINT, we will now create an executable linked to ROO
 
 Coming back to the step 1, you will learn how to fit our graphs.
 The application will be done with a simple 1-D histogram (TH1F) but it could extended
-to higher dimension or to different type or graphics (TGraph, TProfile, etc).
+to higher dimension or to different type or graphics ([TGraph](https://root.cern.ch/doc/master/classTGraph.html), [TProfile](https://root.cern.ch/doc/master/classTProfile.html), etc).
 
 Launch the macro **FirstHisto.cpp**, click right on the hisgram and select **FitPanel** in the menuas described in the screenshots below.
 
@@ -132,7 +132,7 @@ We will now apply the same kind of procedures within the file **Cvs2Plot.cpp**
   - Retrieve the parameters and their errors and save them into a file called parameter.dat. You are free to format the results as you wish but don't forget to give the names of the variable and the parameters.
   - Produce trend plot for the temperature and the pressure using TGraph where the entry number correspond to the abscisse
   - Fit the two TGraph with a linear function
-  - Retrieve the Chi2/dof of the fit and compute the associated probability using the method **Prob** available in **TMath.h**
+  - Retrieve the Chi2/dof of the fit and compute the associated probability using the method [Prob](https://root.cern.ch/root/html524/TMath.html#TMath:Prob) available in [TMath.h](https://root.cern.ch/root/html524/TMath.html)
   - Save the produced display (graphs with their fit) into the ROOT-file and into pdf files
 
 
