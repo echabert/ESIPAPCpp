@@ -18,6 +18,7 @@ We have prepared for you a pre-configured and compact Linux image based on the [
 
    - Open VirtualBox.
    - Select the Linux image.
+   - Click on Start.
 
 
 ## Step 4 : Some tricks to handle perfectly your Linux 
@@ -25,7 +26,7 @@ We have prepared for you a pre-configured and compact Linux image based on the [
 ### Open a terminal
 
    - Do a left-click on the desktop window.
-   - If everything works properly, you should reach the following desktop: ![Desktop](screenshot3.png)
+   - Select from the menu the program called Terminology ![Desktop](screenshot3.png)
 
 ### Accounts
 
