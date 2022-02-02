@@ -18,14 +18,14 @@ We have prepared for you a pre-configured and compact Linux image based on the [
 
    - Open VirtualBox.
    - Select the Linux image.
-   - Do a left-click on the desktop window.
-   - If everything works properly, you should reach the following desktop: ![Desktop](screenshot3.png)
+
 
 ## Step 4 : Some tricks to handle perfectly your Linux 
 
 ### Open a terminal
 
-   - Click on the icon called "Terminology" in the bar tool. See the red arrow in the following screenshot. ![Terminplogy of the icon](screenshot2.png)
+   - Do a left-click on the desktop window.
+   - If everything works properly, you should reach the following desktop: ![Desktop](screenshot3.png)
 
 ### Accounts
 
