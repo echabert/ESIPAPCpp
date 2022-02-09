@@ -1,2 +1,123 @@
 # Session 3
 #   Projet: Environmental conditions
+
+This session should be done in 3 hours.
+You are advised to refer the the C++ lectures and the links given below in order to
+achieve the goals of this computing session.
+
+## Goals
+The goal of this computing session is to combine the codes developed during the computing sessions 1 and 2 in a new application.
+
+## Skills to develop
+  - Producing a shared library [UNIX or MacOS system]
+  - Using a GNU Makefile [UNIX or MacOS system]
+  - Using class in a new project
+
+## Tools used
+   - **Compiler**: 
+       - on Linux/MacOSX machines, the default compiler is **g++**. Alternatively, **clang** can also be used.
+	   - on Windows machines, we use Visual Studio 2013 compiler, named **cl**.
+   - **GNU Make*: relevant on UNIX/MacOS environment
+   - **Text editor**: feel free to use the editor of our choice:
+       - on the Linux virtual machine, several editors are available including emacs, gedit, nedit, vi/vim, ...
+	   - on Windows machines, the Visual Studio IDE (Integrated Development Environment) is recommended or a smart text editor such as [NotePad++](https://notepad-plus-plus.org/downloads/).   
+   - **Git**: requires to have an accound on [github](https://github.com/)
+   - **Doxygen**: this tool must be *a priori* installed on your machine.
+
+## Instructions
+
+### Step 0: Preparing your work environment
+
+#### Step 0.1: Updating the instructions 
+
+You must access to the last version of our instructions order to do the computing sessions. Please follow the instructions in order to have the updated code.
+
+   - Opening a new console session:
+     - On Linux/macOSX machines, you must click on the icon of the Terminal.
+	 - On Windows machines, you must open the program "VS2013 x86 Native Tools Command Prompt" (not the x64!).
+
+   - Entering the working folder
+     - On Linux/macOSX machines, you must issue the following commands:
+       ```
+          cd ~/esipap_instructions
+       ```
+     - On Windows machines, you must issue the following commands:	   
+        ```
+		  cd C:\esipap_instructions
+        ```
+   - Update our repository by typing the command:
+   ```
+      git pull
+   ```
+
+#### Step 0.2: Creating your working folder for Computing Session 3
+
+  - In a console session, entering the folder ```ESICppCS``` by issuing the command lines:
+	   - On Linux/MacOSX machines: ```cd ~/esipap_sessions/ESICppCS```
+	   - On Windows machines: ```cd C:\esipap_sessions\ESICppCS```
+	   
+  - Creating a folder devoted to Computing Session 3 code: 
+	```
+	   mkdir Session3
+	   cd Session3
+	```
+	
+  - In the folder ```Session2```, creating a new text file called ```readme.txt``` containing the sentence ```Folder corresponding to ESIPAP-2021 Computing Session 3```
+
+  - Telling Git that you have added a new file by issue the command line in the console:
+      ```git add readme.txt```
+	  
+  - Recording the changes to the local repository with the following command:
+	  ```git commit -m 'add readme.txt file` readme.txt```
+	  
+  - Propagating the changes to the remote repository with the following command:
+	  ```git push```
+
+
+In order to ease the realization of this computing session, it has been decomposed into short steps.
+
+i
+### Step 2: Utilizing functions and classes from the library
+
+Create a new program with a main function aiming to read and analyze the date supposely taken by a device. There are two options:
+ - reading directly the binary file and then analyzing the data
+ - reading a csv file (produced by the program done during the computing session 1) and analyzing the data
+
+The instructions depends on the class you have developped:
+
+ - StatisticsCalculator:
+  For each variables read (energies, temperature, pressure and relative humidity), you can compute the relevant statistical quantities (min, max, mean, median, rms, std-dev) and dump them in a csv file. The first value of each line will be the name of the variable, i.e energy1 etc.
+
+ - PsychometricCalculator:
+ Feed an instance of the class with the value of temperature, pressure and humidity provided in the file and write in a new csv file the dry temperature and the vapour pressure on top of all the other variables (energies etc ). 
+
+
+### Step 2: Using GNU Makefile
+
+ Relevant instructions to understand to goal and the usage of Makefile can be retrieve in earlier ESIPAP session [here][https://indico.cern.ch/event/782305/contributions/3256094/attachments/1795957/2928175/Makefile.pdf].
+ After reading this document, write down a Makefile and compile our project with it.
+
+
+### Step 3: Production a shared library
+  For UNIX and MacOS users, you can follow the instruction given in the lecture in order to create a shared library. Assuming that you can a class written in a file written.cpp, you can use the command line below.
+   - ``` g++ -c class.cpp``` 
+   - ``` g++ -fPIC -shared -o libESIPAP.so class.o```
+The command line can be enriched if you have several file to be merged in the library (several classes or functions)
+
+If you are successful, you can enrich our Makefile to produce the library and to compile our main program.
+
+### Step 4: Improving the configuration
+
+It is possible to pass arguments to the programm in the command as the main function can be prototyped as
+```int main(int argc, char\* argv[])```
+After looking to the lecture or any relevant in reference, modify our program to retrieve the name of the file to be read in the command line such as following:
+./main file.csv
+
+Protect our code by checking that an argument was provided. If it is not the case, print a message to inform the user on the required argument.
+
+### Step 4: Going further
+
+You can enrich you program in order to propose several options:
+ - the code can check the extension of the file given as argument to know if the format is  binary  (.dat) or ascii (.csv). Adapt the code for the 2 cases
+ - the user could specify the values of interest (s)he may to display using predefined key word such as "mean", "median",... for the class StatisticCalculator or "enthalpy" etc for the class PsychrometricCalculator
+ - te user could also specify the name of the output file with the option -o
