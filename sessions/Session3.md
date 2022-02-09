@@ -109,11 +109,11 @@ The instructions depends on the class you have developped:
    - ``` g++ -fPIC -shared -o libESIPAP.so class.o```
 
 You need to modify system variable in order to allow the system to search for the library in the directory where it is located (command for bash shell and assuming that you execute it in the directory in which the library can be found):
-``` export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:\`pwd\`
+``` export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:`pwd` ```
 
 While compiling the main program, you need to link the library:
 
-```g++ -L\`pwd\` -lESIPAP main.cc -o main```
+```g++ -L`pwd` -lESIPAP main.cc -o main```
 
   assuming that the program is called main.cc and that the library is located on the current directory.
 
@@ -127,7 +127,7 @@ If you are successful, you can enrich our Makefile to produce the library and to
 
 It is possible to pass arguments to the programm in the command as the main function can be prototyped as
 
-```int main(int argc, char\* argv[])```
+```int main(int argc, char* argv[])```
 
 After looking to the lecture or any relevant in reference, modify our program to retrieve the name of the file to be read in the command line such as following:
 
