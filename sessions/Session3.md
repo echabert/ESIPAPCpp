@@ -17,7 +17,7 @@ The goal of this computing session is to combine the codes developed during the 
    - **Compiler**: 
        - on Linux/MacOSX machines, the default compiler is **g++**. Alternatively, **clang** can also be used.
 	   - on Windows machines, we use Visual Studio 2013 compiler, named **cl**.
-   - **GNU Make*: relevant on UNIX/MacOS environment
+   - **GNU Make**: relevant on UNIX/MacOS environment
    - **Text editor**: feel free to use the editor of our choice:
        - on the Linux virtual machine, several editors are available including emacs, gedit, nedit, vi/vim, ...
 	   - on Windows machines, the Visual Studio IDE (Integrated Development Environment) is recommended or a smart text editor such as [NotePad++](https://notepad-plus-plus.org/downloads/).   
@@ -94,7 +94,10 @@ The instructions depends on the class you have developped:
 
 ### Step 2: Using GNU Makefile
 
- Relevant instructions to understand to goal and the usage of Makefile can be retrieve in earlier ESIPAP session [here][https://indico.cern.ch/event/782305/contributions/3256094/attachments/1795957/2928175/Makefile.pdf].
+ Relevant for UNIX and MacOS users.
+
+ Relevant instructions to understand to goal and the usage of Makefile can be retrieve in earlier ESIPAP session [here](https://indico.cern.ch/event/782305/contributions/3256094/attachments/1795957/2928175/Makefile.pdf).
+
  After reading this document, write down a Makefile and compile our project with it.
 
 
@@ -102,7 +105,14 @@ The instructions depends on the class you have developped:
   For UNIX and MacOS users, you can follow the instruction given in the lecture in order to create a shared library. Assuming that you can a class written in a file written.cpp, you can use the command line below.
    - ``` g++ -c class.cpp``` 
    - ``` g++ -fPIC -shared -o libESIPAP.so class.o```
-The command line can be enriched if you have several file to be merged in the library (several classes or functions)
+You need to modify system variable in order to allow the system to search for the library in the directory where it is located (command for bash shell):
+  ``` export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:`pwd`
+While compiling the main program, you need to link to the library:
+  ```g++ -L`pwd` -lESIPAP main.cc -o main```
+  assuming that the program is called main.cc and that the library is located on the current directory.
+  The previous command lines may be changed in you use a different shell or if the library is located on a different directory.
+
+The command lines can be enriched if you have several files to be merged in the library (several classes or functions)
 
 If you are successful, you can enrich our Makefile to produce the library and to compile our main program.
 
