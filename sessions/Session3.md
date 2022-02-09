@@ -85,10 +85,12 @@ Create a new program with a main function aiming to read and analyze the date su
 
 The instructions depends on the class you have developped:
 
- - StatisticsCalculator:
-  For each variables read (energies, temperature, pressure and relative humidity), you can compute the relevant statistical quantities (min, max, mean, median, rms, std-dev) and dump them in a csv file. The first value of each line will be the name of the variable, i.e energy1 etc.
+ - **StatisticsCalculator**:
 
- - PsychometricCalculator:
+  For each variables read (energies, temperature, pressure and relative humidity), you can compute the relevant statistical quantities (min, max, mean, median, rms, std-dev) and dump them in a csv file. The first value of each line will be the name of the variable, **i.e.** "energy1" etc.
+
+ - **PsychometricCalculator**:
+
  Feed an instance of the class with the value of temperature, pressure and humidity provided in the file and write in a new csv file the dry temperature and the vapour pressure on top of all the other variables (energies etc ). 
 
 
@@ -96,7 +98,7 @@ The instructions depends on the class you have developped:
 
  Relevant for UNIX and MacOS users.
 
- Relevant instructions to understand to goal and the usage of Makefile can be retrieve in earlier ESIPAP session [here](https://indico.cern.ch/event/782305/contributions/3256094/attachments/1795957/2928175/Makefile.pdf).
+ Relevant instructions to understand the goal and the usage of Makefile can be retrieve in an earlier ESIPAP session [here](https://indico.cern.ch/event/782305/contributions/3256094/attachments/1795957/2928175/Makefile.pdf).
 
  After reading this document, write down a Makefile and compile our project with it.
 
@@ -105,12 +107,17 @@ The instructions depends on the class you have developped:
   For UNIX and MacOS users, you can follow the instruction given in the lecture in order to create a shared library. Assuming that you can a class written in a file written.cpp, you can use the command line below.
    - ``` g++ -c class.cpp``` 
    - ``` g++ -fPIC -shared -o libESIPAP.so class.o```
-You need to modify system variable in order to allow the system to search for the library in the directory where it is located (command for bash shell):
-  ``` export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:`pwd`
-While compiling the main program, you need to link to the library:
-  ```g++ -L`pwd` -lESIPAP main.cc -o main```
+
+You need to modify system variable in order to allow the system to search for the library in the directory where it is located (command for bash shell and assuming that you execute it in the directory in which the library can be found):
+``` export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:\`pwd\`
+
+While compiling the main program, you need to link the library:
+
+```g++ -L\`pwd\` -lESIPAP main.cc -o main```
+
   assuming that the program is called main.cc and that the library is located on the current directory.
-  The previous command lines may be changed in you use a different shell or if the library is located on a different directory.
+
+The previous command lines may be changed in you use a different shell or if the library is located on a different directory.
 
 The command lines can be enriched if you have several files to be merged in the library (several classes or functions)
 
@@ -119,9 +126,12 @@ If you are successful, you can enrich our Makefile to produce the library and to
 ### Step 4: Improving the configuration
 
 It is possible to pass arguments to the programm in the command as the main function can be prototyped as
+
 ```int main(int argc, char\* argv[])```
+
 After looking to the lecture or any relevant in reference, modify our program to retrieve the name of the file to be read in the command line such as following:
-./main file.csv
+
+```./main file.csv```
 
 Protect our code by checking that an argument was provided. If it is not the case, print a message to inform the user on the required argument.
 
