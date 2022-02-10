@@ -81,7 +81,7 @@ i
 
 The main goal is to create a new program with a main function aiming to read and analyze the data (temperature, pressure and humidity) supposely taken by the setup.
  - copy/paste the code developed during session 1 in order to read the binary data file and extract the temperature, pressure and humidity.
- - include in your project the two classes: **StatisticsCalculator** and **PsychrometricCalculator**. Normally, you have developed one class during Session 2. The other class must be borrowed from one of your colleagues (borrow the code but also the doxygen doc).
+ - include in your project the two classes: **StatisticsCalculator** and **PsychrometricCalculator**. Normally, you have developed one class during Session 2. The code of the other class must be borrowed from one of your colleagues (borrow the code but also the doxygen doc).
  - at this step, it is advised to instantiate the classes **StatisticsCalculator** and **PsychrometricCalculator** in your ``main`` program and try to build (compile) the whole project.
  - with the class **PsychometricCalculator**, compute for each measure the dry temperature and the vapour pressure on top of all the other variables (energies etc ). 
  - with the class **StatisticsCalculator**, compute the relevant statistical quantities (min, max, mean, median, rms, std-dev) and dump them first at the screen.
