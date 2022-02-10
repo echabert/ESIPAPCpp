@@ -90,6 +90,7 @@ Instead of using macros and CINT, we will now create an executable linked to ROO
    ``` 
       g++ main.cc `root-config --cflags --glibs` -o main 
    ```
+      - **warning**: the file to be compiled should be at the beginning, after g++, otherwise it lead to a compilation error
       - root-config --cflags: needed to access the headers
       - root-config --glibs: needed to access the libraries
       - the above mentionned command can be launched to check the result
