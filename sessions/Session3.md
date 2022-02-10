@@ -76,7 +76,6 @@ You must access to the last version of our instructions order to do the computin
 
 In order to ease the realization of this computing session, it has been decomposed into short steps.
 
-i
 ### Step 2: Using functions and classes from a library
 
 The main goal is to create a new program with a main function aiming to read and analyze the data (temperature, pressure and humidity) supposely taken by the setup.
