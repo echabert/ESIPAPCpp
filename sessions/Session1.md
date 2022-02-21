@@ -203,7 +203,7 @@ The goal of this section is to design a program which allows you to open a file,
   - Saving your code by using properly the commands `git add`, `git commit` and `git push`.
   
 **Piece of advice:**
-  - You have to handle binary values and operations in C++. A small appendix in PDF can be read for this purpose: [PDF file](session1/bits_appendix.pdf).
+  - You have to handle binary values and operations in C++. A small appendix in PDF can be read for this purpose: [Handling binary and bit values](session1/bits_appendix.pdf).
   - Put some comments in your code in order to explain what you are doing.
   - For displaying properly a the screen the unit `°C`, you can type `cout << "\370" << "C";`
 
