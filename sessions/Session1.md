@@ -194,17 +194,16 @@ The goal of this section is to design a program which allows you to open a file,
   - Writing the `DataReader.cpp` file.
   - Building the program and creating an executable file.
   - Launching the program and check that you obtain the following output.
+  	```
+	   Byte1=127  Byte2=255  Byte3=170  Byte4=40  Byte5=22  Byte6=140  Byte7=10
+	```
 	```
 	   E1=127  E2=255  T=44.9963[°C]  P=109972[Pa]  RH=54.902[%]
 	```
   - Saving your code by using properly the commands `git add`, `git commit` and `git push`.
   
 **Piece of advice:**
-  - You have to use several classes from the Standard Template Library (STL), in particular:
-     - [ifstream](http://www.cplusplus.com/reference/fstream/ifstream/) : a class which allow to open file
-	 - [cout](http://www.cplusplus.com/reference/iostream/cout/?kw=cout): an object of the class ostream that represents the standard output stream 
-	 - [vector](http://www.cplusplus.com/reference/vector/vector/?kw=vector): a class which describes an array of n objects 	 
-  - Do not wait to finish to write the code before testing it. It is advised that you should build and test the code regularly.
+  - You have to handle binary values and operations in C++. A small appendix in PDF can be read for this purpose: [PDF file](session1/bits_appendix.pdf).
   - Put some comments in your code in order to explain what you are doing.
   - For displaying properly a the screen the unit `°C`, you can type `cout << "\370" << "C";`
 
